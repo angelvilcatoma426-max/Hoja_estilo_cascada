@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Laboratorio de Flexbox con una interfaz responsiva."
+  >
+
+  <title>Ruta Digital | Recursos para aprender CSS</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#contenido">
+    Saltar al contenido principal
+  </a>
+
+  <!-- =========================
+       Header
+       ========================= -->
+
+  <header class="site-header">
+    <div class="container header__inner">
+
+      <a
+        class="brand"
+        href="#inicio"
+        aria-label="Ruta Digital, inicio"
+      >
+        <span class="brand__mark" aria-hidden="true">RD</span>
+        <span>Ruta Digital</span>
+      </a>
+
+      <nav
+        class="site-nav"
+        aria-label="Navegación principal"
+      >
+        <ul class="site-nav__list">
+          <li>
+            <a href="#recursos">Recursos</a>
+          </li>
+
+          <li>
+            <a href="#ruta">Ruta sugerida</a>
+          </li>
+
+          <li>
+            <a href="#practica">Práctica</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a
+        class="button button--small"
+        href="#recursos"
+      >
+        Explorar
+      </a>
+
+    </div>
+  </header>
+
+  <!-- =========================
+       Main
+       ========================= -->
+
+  <main id="contenido">
+
+    <!-- =========================
+         Hero
+         ========================= -->
+
+    <section
+      class="hero"
+      id="inicio"
+    >
+      <div class="container hero__layout">
+
+        <div class="hero__content">
+
+          <p class="eyebrow">
+            Laboratorio CSS · Semana 2
+          </p>
+
+          <h1>
+            Organiza interfaces flexibles con Flexbox
+          </h1>
+
+          <p class="hero__lead">
+            Aprende a distribuir espacio, alinear componentes y permitir que
+            el contenido se adapte sin depender de anchos rígidos.
+          </p>
+
+          <div class="hero__actions">
+            <a
+              class="button"
+              href="#recursos"
+            >
+              Ver recursos
+            </a>
+
+            <a
+              class="button button--secondary"
+              href="#practica"
+            >
+              Ir al reto
+            </a>
+          </div>
+
+        </div>
+
+        <aside
+          class="hero__panel"
+          aria-labelledby="panel-title"
+        >
+          <span
+            class="panel__number"
+            aria-hidden="true"
+          >
+            01
+          </span>
+
+          <div>
+            <p class="panel__label">
+              Concepto clave
+            </p>
+
+            <h2 id="panel-title">
+              Un eje principal a la vez
+            </h2>
+
+            <p>
+              Flexbox distribuye elementos en una fila o columna y controla
+              el espacio libre a lo largo de sus ejes.
+            </p>
+
+            <a href="#ruta">
+              Revisar tema
+            </a>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         Recursos
+         ========================= -->
+
+    <section
+      class="section"
+      id="recursos"
+    >
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+            <p class="eyebrow">
+              Recursos
+            </p>
+
+            <h2>
+              Conceptos esenciales de Flexbox
+            </h2>
+          </div>
+
+          <ul class="tag-list">
+            <li>Flexbox</li>
+            <li>Responsive</li>
+            <li>CSS</li>
+          </ul>
+
+        </div>
+
+        <div class="card-list">
+
+          <article class="card card--featured">
+
+            <div class="card__visual card__visual--blue">
+              DISPLAY
+            </div>
+
+            <div class="card__body">
+
+              <p class="card__eyebrow">
+                Fundamentos
+              </p>
+
+              <h3>
+                Contenedor flexible
+              </h3>
+
+              <p>
+                Aprende a convertir un elemento en un contenedor Flexbox
+                mediante la propiedad <code>display: flex</code>.
+              </p>
+
+              <div class="card__footer">
+                <span>01 · Básico</span>
+
+                <a href="#ruta">
+                  Revisar tema
+                </a>
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="card">
+
+            <div class="card__visual card__visual--cyan">
+              DIRECTION
+            </div>
+
+            <div class="card__body">
+
+              <p class="card__eyebrow">
+                Ejes
+              </p>
+
+              <h3>
+                Dirección
+              </h3>
+
+              <p>
+                Define si los elementos se organizan en una fila o en una
+                columna utilizando <code>flex-direction</code>.
+              </p>
+
+              <div class="card__footer">
+                <span>02 · Básico</span>
+
+                <a href="#ruta">
+                  Revisar tema
+                </a>
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="card">
+
+            <div class="card__visual card__visual--violet">
+              ALIGN
+            </div>
+
+            <div class="card__body">
+
+              <p class="card__eyebrow">
+                Alineación
+              </p>
+
+              <h3>
+                Alinear elementos
+              </h3>
+
+              <p>
+                Controla la posición de los elementos con
+                <code>justify-content</code> y <code>align-items</code>.
+              </p>
+
+              <div class="card__footer">
+                <span>03 · Intermedio</span>
+
+                <a href="#ruta">
+                  Revisar tema
+                </a>
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="card">
+
+            <div class="card__visual card__visual--green">
+              WRAP
+            </div>
+
+            <div class="card__body">
+
+              <p class="card__eyebrow">
+                Responsive
+              </p>
+
+              <h3>
+                Reflujo del contenido
+              </h3>
+
+              <p>
+                Permite que los elementos pasen a una nueva línea cuando el
+                espacio disponible no sea suficiente.
+              </p>
+
+              <div class="card__footer">
+                <span>04 · Intermedio</span>
+
+                <a href="#ruta">
+                  Revisar tema
+                </a>
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="card">
+
+            <div class="card__visual card__visual--orange">
+              GAP
+            </div>
+
+            <div class="card__body">
+
+              <p class="card__eyebrow">
+                Espaciado
+              </p>
+
+              <h3>
+                Separación entre elementos
+              </h3>
+
+              <p>
+                Usa <code>gap</code> para crear espacios consistentes entre
+                los elementos de un contenedor flexible.
+              </p>
+
+              <div class="card__footer">
+                <span>05 · Intermedio</span>
+
+                <a href="#ruta">
+                  Revisar tema
+                </a>
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         Ruta sugerida
+         ========================= -->
+
+    <section
+      class="section section--muted"
+      id="ruta"
+    >
+      <div class="container path">
+
+        <div class="path__intro">
+
+          <p class="eyebrow">
+            Ruta sugerida
+          </p>
+
+          <h2>
+            De la estructura al comportamiento responsivo
+          </h2>
+
+          <p>
+            Avanza en orden. Cada paso añade una decisión de Flexbox y
+            mantiene la semántica del documento.
+          </p>
+
+        </div>
+
+        <ol class="path__steps">
+
+          <li>
+            <span>1</span>
+            Define el contenedor flexible.
+          </li>
+
+          <li>
+            <span>2</span>
+            Selecciona la dirección de los elementos.
+          </li>
+
+          <li>
+            <span>3</span>
+            Distribuye y alinea el espacio libre.
+          </li>
+
+          <li>
+            <span>4</span>
+            Permite el reflujo y prueba varios anchos.
+          </li>
+
+        </ol>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         Práctica
+         ========================= -->
+
+    <section
+      class="section"
+      id="practica"
+    >
+      <div class="container practice">
+
+        <div>
+
+          <p class="eyebrow">
+            Reto de cierre
+          </p>
+
+          <h2>
+            Extiende la colección
+          </h2>
+
+          <p>
+            Agrega una sexta tarjeta, conserva la alineación de los pies de
+            tarjeta y comprueba que no exista desplazamiento horizontal.
+          </p>
+
+        </div>
+
+        <a
+          class="button"
+          href="#recursos"
+        >
+          Volver a los recursos
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================
+       Footer
+       ========================= -->
+
+  <footer class="site-footer">
+
+    <div class="container footer__inner">
+
+      <p>
+        <strong>Ruta Digital</strong>
+        · Laboratorio de Flexbox
+      </p>
+
+      <a href="#inicio">
+        Volver al inicio
+      </a>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
