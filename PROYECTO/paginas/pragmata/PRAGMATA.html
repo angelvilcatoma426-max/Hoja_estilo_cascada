@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAGMATA | GAME LIVE CENTER</title>
+    <link rel="stylesheet" href="../../css/PRAGMATA.css">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+<script>
+
+    let slideActual = 0;
+
+    window.onload = function () {
+        mostrarSlide(0);
+    };
+
+    function mostrarSlide(index) {
+
+        const slides = document.querySelectorAll(".slide");
+
+        slides.forEach(slide => {
+            slide.style.display = "none";
+        });
+
+        slides[index].style.display = "block";
+
+        slideActual = index;
+    }
+
+    function moverMiniaturas(direccion) {
+
+        const contenedor = document.getElementById("miniaturas");
+
+        contenedor.scrollLeft += direccion * 220;
+    }
+
+</script>
+
+<header>
+    <div class="logo">
+        <h1>🎮 GAME LIVE CENTER</h1>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="../catalogo/catalogo.html">Catálogo</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="detalle-juego">
+
+    <h2>Terraria</h2>
+
+    <section class="juego-principal">
+
+        <!-- IZQUIERDA -->
+        <div class="galeria">
+
+            <!-- VISOR -->
+            <div class="visor-principal">
+
+
+                <div class="slide">
+                    <img src="../../imagen/PRAGMATA/pragmata1.jpg"
+                         class="media-principal">
+                </div>
+
+                <div class="slide">
+                    <img src="../../imagen/PRAGMATA/pragmata2.jpg"
+                         class="media-principal">
+                </div>
+
+                <div class="slide">
+                    <img src="../../imagen/PRAGMATA/pragmata3.jpg"
+                         class="media-principal">
+                </div>
+
+                <div class="slide">
+                    <img src="../../imagen/PRAGMATA/pragmata4.jpg"
+                         class="media-principal">
+                </div>
+
+                <div class="slide">
+                    <img src="../../imagen/PRAGMATA/pragmata5.jpg"
+                         class="media-principal">
+                </div>
+
+                <div class="slide">
+                    <img src="../../imagen/PRAGMATA/pragmata6.jpg"
+                         class="media-principal">
+                </div>
+                
+                <div class="slide">
+                    <img src="../../imagen/PRAGMATA/pragmata7.jpg"
+                         class="media-principal">
+                </div>
+
+                <div class="slide">
+                    <img src="../../imagen/PRAGMATA/pragmata8.jpg"
+                         class="media-principal">
+                </div>
+
+                <div class="slide">
+                    <img src="../../imagen/PRAGMATA/pragmata9.jpg"
+                         class="media-principal">
+                </div>
+
+            </div>
+
+            <!-- MINIATURAS -->
+            <div class="contenedor-miniaturas">
+
+                <button class="flecha" onclick="moverMiniaturas(-1)">
+                    &#10094;
+                </button>
+
+                <div class="miniaturas" id="miniaturas">
+
+
+                    <img src="../../imagen/PRAGMATA/pragmata1.jpg"
+                         onclick="mostrarSlide(0)">
+
+                    <img src="../../imagen/PRAGMATA/pragmata2.jpg"
+                         onclick="mostrarSlide(1)">
+
+                    <img src="../../imagen/PRAGMATA/pragmata3.jpg"
+                         onclick="mostrarSlide(2)">
+
+                    <img src="../../imagen/PRAGMATA/pragmata4.jpg"
+                         onclick="mostrarSlide(3)">
+
+                    <img src="../../imagen/PRAGMATA/pragmata5.jpg"
+                         onclick="mostrarSlide(4)">
+                        
+                    <img src="../../imagen/PRAGMATA/pragmata6.jpg"
+                         onclick="mostrarSlide(5)">
+
+                    <img src="../../imagen/PRAGMATA/pragmata7.jpg"
+                         onclick="mostrarSlide(6)">
+                    
+                    <img src="../../imagen/PRAGMATA/pragmata8.jpg"
+                         onclick="mostrarSlide(7)">
+
+                    <img src="../../imagen/PRAGMATA/pragmata9.jpg"
+                         onclick="mostrarSlide(8)">
+ 
+
+                </div>
+
+                <button class="flecha" onclick="moverMiniaturas(1)">
+                    &#10095;
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- DERECHA -->
+        <div class="info-juego">
+
+            <p>
+                Pragmata es un juego de acción y aventura de ciencia ficción de Capcom. Acompaña a Hugh, superviviente de una expedición trágica, y a Diana, una joven androide, mientras avanzan por una estación lunar dominada por una IA fuera de control para volver a la Tierra.
+            </p>
+
+            <p><strong>Reseñas:</strong> Extremadamente positivas</p>
+            <p><strong>Fecha de lanzamiento:</strong> 16 ABR 2026</p>
+            <p><strong>Desarrollador:</strong> CAPCOM Co., Ltd.</p>
+            <p><strong>Editor:</strong> CAPCOM Co., Ltd.</p>
+            <p><strong>Género:</strong> Ciencia ficción, Adorables, Acción, Disparos en tercera persona, Divertidos</p>
+
+            <div class="precio-box">
+
+                <span class="precio">S/ 164.00</span>
+
+                <a href="registrar tarjeta.html">
+                    <button>Comprar ahora</button>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DESCRIPCIÓN -->
+        <section class="descripcion">
+            <h3>Acerca de este juego</h3>
+
+        <h4>"Vayas donde vayas, allí estaré".</h4>
+
+        <p>
+            Pragmata es un juego de acción y aventura de ciencia ficción de Capcom.
+        </p>
+
+        <p>
+            Acompaña a Hugh, superviviente de una expedición trágica, y a Diana, una joven androide, mientras avanzan por una estación lunar dominada por una IA fuera de control para volver a la Tierra.        
+        </p>
+
+        <h4>UN TRÁGICO ACCIDENTE. UN DÚO INESPERADO.</h4>
+
+        <p>
+            En una remota instalación de investigación lunar, la humanidad descubre un nuevo mineral: uno que, una vez refinado correctamente, permite crear casi cualquier cosa mediante impresoras 3D.       
+        </p>
+
+        <p>
+            Cuando la instalación queda repentinamente en silencio, Hugh y su equipo son enviados a investigar… pero entonces ocurre el desastre.
+        </p>
+
+        <p>
+            Hugh es salvado por Diana, una androide solitaria que deambula por el complejo. Ambos deberán unir fuerzas para encontrar la forma de abandonar la luna, avanzando a través de unas instalaciones controladas por una IA decidida a detenerlos.
+        </p>
+
+
+        <section class="requisitos">
+
+            <div class="requisitos-box">
+
+                <div class="requisito-columna">
+
+                    <h4>MÍNIMO</h4>
+
+                    <p>Requiere un procesador y un sistema operativo de 64 bits</p>
+                    <p><strong>SO:</strong> Windows 11 (64 bit)</p>
+                    <p><strong>PROCESADOR:</strong> Intel Core i5-8500 / AMD Ryzen 5 3500</p>
+                    <p><strong>MEMORIA:</strong>  16 GB de RAM</p>
+                    <p><strong>GRÁFICOS:</strong> NVIDIA GeForce GTX 1660 6GB / Radeon RX 5500 XT 8GB</p>
+                    <p><strong>DirectX:</strong> Versión 12</p>
+                    <p><strong>Red:</strong> Conexión de banda ancha a Internet</p>
+                    <p><strong>ALMACENAMIENTO:</strong>  40 GB de espacio disponible</p>
+                    <p><strong>Notas adicionales:</strong> Rendimiento estimado en modo "Rendimiento": 1080p/45 fps. La tasa de fotogramas puede disminuir en escenas de gráficos intensos. Se recomienda usar SSD.</p>
+
+                </div>
+
+                <div class="requisito-columna">
+
+                    <h4>RECOMENDADO</h4>
+
+                    <p>Requiere un procesador y un sistema operativo de 64 bits</p>
+                    <p><strong>SO:</strong> Windows 11 (64 bit)</p>
+                    <p><strong>PROCESADOR:</strong> Intel Core i7-8700 / AMD Ryzen 5 5500</p>
+                    <p><strong>MEMORIA:</strong>  16 GB de RAM</p>
+                    <p><strong>GRÁFICOS:</strong> NVIDIA GeForce RTX 2060 Super 8GB / Radeon RX 6600 8GB</p>
+                    <p><strong>DirectX:</strong> Versión 12</p>
+                    <p><strong>Red:</strong> Conexión de banda ancha a Internet</p>
+                    <p><strong>ALMACENAMIENTO:</strong>  40 GB de espacio disponible</p>
+                    <p><strong>Notas adicionales:</strong>  Rendimiento estimado en modo "Equilibrado": 1080p/60 fps. La tasa de fotogramas puede disminuir en escenas de gráficos intensos. Se requiere AMD Radeon RX 6700 XT de 12 GB o NVIDIA GeForce RTX 3060 de 12 GB para activar el trazado de rayos. Se recomienda usar SSD.</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <div class="footer-contenido">
+
+        <div>
+            <h4>GAME LIVE CENTER</h4>
+            <p>Tu tienda digital de videojuegos favorita.</p>
+        </div>
+
+        <div>
+            <h4>Redes</h4>
+            <p>Facebook</p>
+            <p>Instagram</p>
+            <p>Tiktok</p>
+            <p>Discord</p>
+        </div>
+
+        <div>
+            <h4>Contacto</h4>
+            <li><a href="soporte.html">soporte@gamelivecenter.com</a></li>
+            <p></p>
+            <p>+51 978 563 753</p>
+        </div>
+
+    </div>
+
+    <p class="copy">
+        © 2026 GAME LIVE CENTER - Todos los derechos reservados
+    </p>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Spider Man Remaster | GAME LIVE CENTER</title>
+    <link rel="stylesheet" href="../../css/MarvelSpiderManRemaster.css">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+<script>
+
+    let slideActual = 0;
+
+    window.onload = function () {
+        mostrarSlide(0);
+    };
+
+    function mostrarSlide(index) {
+
+        const slides = document.querySelectorAll(".slide");
+
+        slides.forEach(slide => {
+            slide.style.display = "none";
+        });
+
+        slides[index].style.display = "block";
+
+        slideActual = index;
+    }
+
+    function moverMiniaturas(direccion) {
+
+        const contenedor = document.getElementById("miniaturas");
+
+        contenedor.scrollLeft += direccion * 220;
+    }
+
+</script>
+
+<header>
+    <div class="logo">
+        <h1>🎮 GAME LIVE CENTER</h1>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="../catalogo/catalogo.html">Catálogo</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="detalle-juego">
+
+    <h2>Marvel's Spider-Man Remastered</h2>
+
+    <section class="juego-principal">
+
+        <!-- IZQUIERDA -->
+        <div class="galeria">
+
+            <!-- VISOR -->
+            <div class="visor-principal">
+
+                <div class="slide">
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man1.jpg"
+                         class="media-principal">
+                </div>
+
+                <div class="slide">
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man2.jpg"
+                         class="media-principal">
+                </div>
+
+                <div class="slide">
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man3.jpg"
+                         class="media-principal">
+                </div>
+
+                <div class="slide">
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man4.jpg"
+                         class="media-principal">
+                </div>
+
+                <div class="slide">
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man5.jpg"
+                         class="media-principal">
+                </div>
+
+                <div class="slide">
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man6.jpg"
+                         class="media-principal">
+                </div>
+                
+                <div class="slide">
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man7.jpg"
+                         class="media-principal">
+                </div>
+
+                <div class="slide">
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man8.jpg"
+                         class="media-principal">
+                </div>
+
+                <div class="slide">
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man9.jpg"
+                         class="media-principal">
+                </div>
+
+                <div class="slide">
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man10.jpg"
+                         class="media-principal">
+                </div>
+
+            </div>
+
+            <!-- MINIATURAS -->
+            <div class="contenedor-miniaturas">
+
+                <button class="flecha" onclick="moverMiniaturas(-1)">
+                    &#10094;
+                </button>
+
+                <div class="miniaturas" id="miniaturas">
+
+
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man1.jpg"
+                         onclick="mostrarSlide(0)">
+
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man2.jpg"
+                         onclick="mostrarSlide(1)">
+
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man3.jpg"
+                         onclick="mostrarSlide(2)">
+
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man4.jpg"
+                         onclick="mostrarSlide(3)">
+
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man5.jpg"
+                         onclick="mostrarSlide(4)">
+                        
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man6.jpg"
+                         onclick="mostrarSlide(5)">
+
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man7.jpg"
+                         onclick="mostrarSlide(6)">
+                    
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man8.jpg"
+                         onclick="mostrarSlide(7)">
+
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man9.jpg"
+                         onclick="mostrarSlide(8)">
+
+                    <img src="../../imagen/Marvel's Spider-Man Remastered/spider-man10.jpg"
+                         onclick="mostrarSlide(9)">
+                    
+                        
+
+                </div>
+
+                <button class="flecha" onclick="moverMiniaturas(1)">
+                    &#10095;
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- DERECHA -->
+        <div class="info-juego">
+
+            <p>
+                En Marvel’s Spider-Man Remasterizado, la vida de Peter Parker se topa con la de Spider-Man en una historia original repleta de acción.
+                Ponte en la piel de un Peter Parker veterano que ha pulido sus habilidades en la lucha contra el crimen y los villanos en la Nueva York de Marvel.
+            </p>
+
+            <p><strong>Reseñas:</strong> Extremadamente positivas</p>
+            <p><strong>Fecha de lanzamiento:</strong> 12 Agosto 2022</p>
+            <p><strong>Desarrollador:</strong> Insomniac Games</p>
+            <p><strong>Editor:</strong> PlayStation Publishing LLC</p>
+            <p><strong>Género:</strong> Acción, Aventura, Mundo Abierto</p>
+
+            <div class="precio-box">
+
+                <span class="precio">S/ 177.00</span>
+
+                <a href="registrar tarjeta.html">
+                    <button>Comprar ahora</button>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DESCRIPCIÓN -->
+        <section class="descripcion">
+            <h3>Acerca de este juego</h3>
+
+    <p>
+        Marvel's Spider-Man Remasterizado para PC ha sido desarrollado por Insomniac Games en colaboración con Marvel y optimizado para PC por Nixxes Software. El protagonista es un Peter Parker veterano que ha pulido sus habilidades en la lucha contra el crimen y los villanos en la Nueva York de Marvel. A su vez, también lucha por poner en orden su caótica vida personal y su carrera, con el destino de la ciudad en sus manos.
+    </p>
+
+    <h3>Características principales</h3>
+
+    <h4>Demuestra tu grandeza</h4>
+    <p>
+        Cuando los villanos de Marvel amenazan la ciudad de Nueva York, la vida de Peter Parker se topa con la de Spider-Man. Si quiere salvar la ciudad y a sus seres queridos, tendrá que alzarse y demostrar su grandeza.
+    </p>
+
+    <h4>Siéntete como Spider-Man</h4>
+    <p>
+        Ocho años después de que se enfundase la máscara por primera vez, Peter Parker es todo un experto en la lucha contra el crimen. Siente todo el poder de un Spider-Man más curtido gracias a un combate en el que priman la improvisación, las acrobacias dinámicas, un control fluido para desplazarse por la ciudad y las interacciones con el entorno.
+    </p>
+
+    <h4>Mundos enfrentados</h4>
+    <p>
+        La vida de Peter Parker se topa con la de Spider-Man en una historia original repleta de acción. En este nuevo universo de Spider-Man, los personajes emblemáticos de la vida de Peter y Spider-Man se han reinventado y desempeñarán papeles únicos.
+    </p>
+
+    <h4>La Nueva York de Marvel son tus dominios</h4>
+    <p>
+        La Gran Manzana cobra vida en Marvel's Spider-Man. Balancéate por barrios bulliciosos y contempla las imponentes estampas de los lugares más míticos de Marvel y Manhattan. Usa el entorno para vencer a los villanos de la forma más épica y espectacular.
+    </p>
+
+    <h4>Disfruta de todo el contenido de La ciudad que nunca duerme</h4>
+    <p>
+        Marvel’s Spider-Man: La ciudad que nunca duerme es la continuación de la historia de Marvel’s Spider-Man Remasterizado. Consigue acceso a tres episodios con misiones y desafíos adicionales.
+    </p>
+
+    <h3>Características de PC</h3>
+
+    <h4>Gráficos optimizados en PC</h4>
+    <p>
+        Disfruta de una gran variedad de opciones de calidad gráfica adaptadas a una amplia gama de dispositivos, frecuencias desbloqueadas y compatibilidad con otras tecnologías, como NVIDIA DLSS, que ofrece un rendimiento mejorado, y NVIDIA DLAA, que aumenta la calidad de imagen. También compatible con la tecnología de reescalado AMD FSR 2.0.
+    </p>
+
+    <h4>Reflejos con trazado de rayos y sombras mejoradas</h4>
+    <p>
+        La ciudad cobra vida gracias a las sombras optimizadas y a los impresionantes reflejos con trazado de rayos, que ofrecen diferentes modos de calidad entre los que elegir.
+    </p>
+
+    <h4>Compatibilidad con monitores ultrapanorámicos</h4>
+    <p>
+        Disfruta de los paisajes cinematográficos de la Nueva York de Marvel para una gran selección de configuraciones de pantalla, incluidas las resoluciones 16:9, 16:10, 21:9, 32:9 y 48:9 con sistemas de tres pantallas de NVIDIA Surround o AMD Eyefinity.
+    </p>
+
+    <h4>Controles y personalización</h4>
+    <p>
+        Siéntete como Spider-Man gracias a la tecnología háptica inmersiva y a los gatillos dinámicos del mando DualSense™ de PlayStation con conexión con cable USB. Aprovecha la plena compatibilidad con teclado y ratón mediante distintas opciones de control personalizables.
+    </p>
+
+    <p>
+        *Requiere un dispositivo de pantalla y un PC compatibles.<br>
+        **Requiere un PC compatible.
+    </p>
+
+
+        <section class="requisitos">
+
+            <div class="requisitos-box">
+
+                <div class="requisito-columna">
+
+                    <h4>MÍNIMO</h4>
+
+                    <p>Requiere un procesador y un sistema operativo de 64 bits</p>
+                    <p><strong>SO:</strong> Windows 10 64-bit</p>
+                    <p><strong>PROCESADOR:</strong> Intel Core i3-4160, 3.6 GHz or AMD equivalent</p>
+                    <p><strong>MEMORIA:</strong> 8 GB de RAM</p>
+                    <p><strong>GRÁFICOS:</strong> NVIDIA GTX 950 or AMD Radeon RX 470</p>
+                    <p><strong>DIRECTX:</strong> Versión 12</p>
+                    <p><strong>ALMACENAMIENTO:</strong> 75 GB de espacio disponible</p>
+
+                </div>
+
+                <div class="requisito-columna">
+
+                    <h4>RECOMENDADO</h4>
+
+                    <p>Requiere un procesador y un sistema operativo de 64 bits</p>
+                    <p><strong>SO:</strong> Windows 10 64-bit</p>
+                    <p><strong>PROCESADOR:</strong> Intel Core i5-4670, 3.4 Ghz or AMD Ryzen5 1600, 3.2 Ghz</p>
+                    <p><strong>MEMORIA:</strong> 16 GB de RAM</p>
+                    <p><strong>GRÁFICOS:</strong> NVIDIA GTX 1060 6GB or AMD Radeon RX 580 8GB</p>
+                    <p><strong>DIRECTX:</strong> Versión 12</p>
+                    <p><strong>ALMACENAMIENTO:</strong> 75 GB de espacio disponible</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <div class="footer-contenido">
+
+        <div>
+            <h4>GAME LIVE CENTER</h4>
+            <p>Tu tienda digital de videojuegos favorita.</p>
+        </div>
+
+        <div>
+            <h4>Redes</h4>
+            <p>Facebook</p>
+            <p>Instagram</p>
+            <p>Tiktok</p>
+            <p>Discord</p>
+        </div>
+
+        <div>
+            <h4>Contacto</h4>
+            <li><a href="soporte.html">soporte@gamelivecenter.com</a></li>
+            <p></p>
+            <p>+51 978 563 753</p>
+        </div>
+
+    </div>
+
+    <p class="copy">
+        © 2026 GAME LIVE CENTER - Todos los derechos reservados
+    </p>
+
+</footer>
+
+</body>
+</html>
