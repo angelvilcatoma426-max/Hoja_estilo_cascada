@@ -218,11 +218,9 @@ h3 {
 .hero {
   padding-block: clamp(3.5rem, 9vw, 7rem);
   background:
-    radial-gradient(
-      circle at 85% 20%,
+    radial-gradient(circle at 85% 20%,
       rgb(34 199 214 / 22%),
-      transparent 27rem
-    ),
+      transparent 27rem),
     linear-gradient(135deg, #f7fbff, #eef5fb);
 }
 
@@ -399,7 +397,7 @@ h3 {
   padding: 1.25rem;
 }
 
-.card__body > p:not(.card__eyebrow) {
+.card__body>p:not(.card__eyebrow) {
   margin-block-start: 0;
   color: var(--color-muted);
 }
@@ -481,7 +479,7 @@ h3 {
   gap: 1.25rem 2rem;
 }
 
-.practice > div {
+.practice>div {
   flex: 1 1 30rem;
 }
 

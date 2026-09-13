@@ -185,11 +185,9 @@ p {
   inline-size: 2.5rem;
   aspect-ratio: 1;
   color: #ffffff;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-accent)
-  );
+  background: linear-gradient(135deg,
+      var(--color-primary),
+      var(--color-accent));
   border-radius: 0.75rem;
 }
 
@@ -279,21 +277,17 @@ p {
   gap: var(--space-4);
   overflow: hidden;
   background:
-    radial-gradient(
-      circle at 90% 10%,
+    radial-gradient(circle at 90% 10%,
       rgb(32 197 211 / 18%),
-      transparent 35%
-    ),
+      transparent 35%),
     var(--color-surface);
 }
 
 .metrics {
   grid-area: metrics;
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(min(100%, 12rem), 1fr)
-  );
+  grid-template-columns: repeat(auto-fit,
+      minmax(min(100%, 12rem), 1fr));
   gap: var(--space-3);
 }
 
@@ -429,11 +423,9 @@ p {
 }
 
 .hero__cell--accent {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-accent)
-  );
+  background: linear-gradient(135deg,
+      var(--color-primary),
+      var(--color-accent));
   border-color: transparent;
 }
 
@@ -472,11 +464,9 @@ p {
   display: block;
   inline-size: var(--progress);
   block-size: 100%;
-  background: linear-gradient(
-    90deg,
-    var(--color-primary),
-    var(--color-accent)
-  );
+  background: linear-gradient(90deg,
+      var(--color-primary),
+      var(--color-accent));
   border-radius: inherit;
 }
 
@@ -514,10 +504,8 @@ p {
 
 .resource-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(min(100%, 16rem), 1fr)
-  );
+  grid-template-columns: repeat(auto-fit,
+      minmax(min(100%, 16rem), 1fr));
   gap: var(--space-3);
 }
 
@@ -580,7 +568,7 @@ p {
   display: block;
 }
 
-.task-list div > span {
+.task-list div>span {
   color: var(--color-muted);
   font-size: 0.9rem;
 }
@@ -595,7 +583,7 @@ p {
   gap: var(--space-2);
 }
 
-.activity-list li > span {
+.activity-list li>span {
   color: var(--color-primary);
   font-weight: 900;
 }
@@ -641,8 +629,7 @@ p {
 
   .dashboard {
     grid-template-columns:
-      minmax(12rem, 15rem)
-      minmax(0, 1fr);
+      minmax(12rem, 15rem) minmax(0, 1fr);
 
     grid-template-areas:
       "sidebar hero"
@@ -655,8 +642,7 @@ p {
 
   .hero {
     grid-template-columns:
-      minmax(0, 1.35fr)
-      minmax(13rem, 0.65fr);
+      minmax(0, 1.35fr) minmax(13rem, 0.65fr);
   }
 }
 
@@ -667,9 +653,7 @@ p {
 @media (min-width: 72rem) {
   .dashboard {
     grid-template-columns:
-      minmax(12rem, 15rem)
-      minmax(0, 1.2fr)
-      minmax(17rem, 0.8fr);
+      minmax(12rem, 15rem) minmax(0, 1.2fr) minmax(17rem, 0.8fr);
 
     grid-template-areas:
       "sidebar hero hero"
