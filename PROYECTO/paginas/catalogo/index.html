@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tienda | GAME LIVE CENTER</title>
+    <link href="../../css/catalogo.css" rel="stylesheet" />
+    <link href="../../css/style.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- BOTÓN CARRITO -->
+    <button class="btn-carrito" id="btnCarrito">🛒 Carrito</button>
+    <!-- MODAL CARRITO -->
+    <div class="modal" id="modalCarrito">
+        <div class="modal-content">
+            <span class="close" id="cerrarModal">×</span>
+            <h2>Tu carrito</h2>
+            <div class="lista-carrito" id="listaCarrito"></div>
+            <div class="estado-compra" id="estadoCompra">Tu carrito está listo.</div>
+            <div class="resumen">
+                <h3>Total: S/ <span id="totalCarrito">0.00</span></h3>
+            </div>
+            <button class="pagar" type="button">Pagar (simulado)</button>
+        </div>
+    </div>
+    <div class="modal modal-boleta" id="modalBoleta">
+        <div class="modal-content boleta-content">
+            <span class="close" id="cerrarBoleta">×</span>
+            <div class="boleta-header">
+                <h2>Boleta de compra</h2>
+                <p>GAME LIVE CENTER</p>
+            </div>
+            <p class="boleta-subtitle">Compra digital confirmada</p>
+            <div class="boleta-info">
+                <p><strong>Cliente:</strong> <span id="clienteBoleta">Usuario invitado</span></p>
+                <p><strong>Correo:</strong> <span id="correoBoleta">Sin correo registrado</span></p>
+                <p><strong>ID:</strong> <span id="documentoBoleta">Sin ID</span></p>
+                <p><strong>Fecha:</strong> <span id="fechaBoleta"></span></p>
+            </div>
+            <div class="detalle-boleta" id="detalleBoleta"></div>
+            <div class="resumen-boleta">
+                <h3>Total pagado: S/ <span id="totalBoleta">0.00</span></h3>
+            </div>
+            <button class="pagar" id="descargarBoleta" type="button">Descargar boleta</button>
+        </div>
+    </div>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🎮 GAME LIVE CENTER</h1>
+            </div>
+
+
+
+            <div class="nav-derecha"><input class="menu-toggle" id="menu-toggle" type="checkbox" />
+                <div class="perfil-cliente">
+                    <button aria-label="Perfil de usuario" class="perfil-icono" id="perfilIcono" type="button">
+                        <img alt="Perfil" id="perfilAvatar" src="" style="display:none;" />
+                        <svg fill="none" height="22" id="perfilIconoDefault" stroke="currentColor" stroke-width="2"
+                            viewbox="0 0 24 24" width="22">
+                            <circle cx="12" cy="8" r="4"></circle>
+                            <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
+                        </svg>
+                    </button>
+                    <div class="perfil-tooltip" id="perfilTooltip">
+                        <p class="perfil-tooltip-nombre" id="tooltipNombre"></p>
+                        <p class="perfil-tooltip-correo" id="tooltipCorreo"></p>
+                    </div>
+                </div><label class="hamburguesa" for="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <ul class="menu">
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../soporte/index.html">Soporte</a></li>
+                    <li><a href="../nosotros/index.html" style="color: #00ff88;">Nosotros</a></li>
+                    <li><a href="../registrar-tarjeta/index.html">Registro de tarjeta</a></li>
+                    <li><a href="../login/index.html">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="perfil-modal-overlay" id="perfilModalOverlay">
+            <div class="perfil-modal">
+                <button class="perfil-modal-cerrar" id="perfilModalCerrar" type="button">✕</button>
+                <div class="perfil-modal-avatar-wrap">
+                    <img alt="Foto de perfil" id="modalAvatar" src="" />
+                    <label class="perfil-cambiar-foto" for="perfilAvatarInput">Cambiar foto</label>
+                    <input accept="image/*" hidden="" id="perfilAvatarInput" type="file" />
+                </div>
+                <h3 id="modalNombre"></h3>
+                <p class="perfil-dato"><strong>Correo</strong><span id="modalCorreo"></span></p>
+                <p class="perfil-dato"><strong>ID de cuenta</strong><span id="modalId"></span></p>
+                <button class="perfil-logout" id="perfilLogout" type="button">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+    <main class="steam-container">
+        <aside class="sidebar">
+            <h3>Géneros</h3>
+            <ul class="filter-list">
+                <li><input type="checkbox" value="Acción" /> Acción</li>
+                <li><input type="checkbox" value="Aventura" /> Aventura</li>
+                <li><input type="checkbox" value="RPG" /> RPG</li>
+                <li><input type="checkbox" value="Shooter" /> Shooter</li>
+                <li><input type="checkbox" value="Indie" /> Indie</li>
+            </ul>
+            <h3>Plataforma</h3>
+            <ul class="filter-list">
+                <li><input name="plat" type="radio" value="PC" /> PC</li>
+                <li><input name="plat" type="radio" value="Xbox" /> Xbox</li>
+                <li><input name="plat" type="radio" value="PlayStation" /> PlayStation</li>
+                <li><input checked="" name="plat" type="radio" value="" /> Todos</li>
+            </ul>
+        </aside>
+        <section class="game-list">
+            <div class="list-header">
+                <h2>Todos los Juegos (20)</h2>
+                <div class="search-wrapper">
+                    <label class="search-label" for="gameSearch">Buscar juego</label>
+                    <div class="search-box">
+                        <i class="bi bi-search"></i>
+                        <input autocomplete="off" id="gameSearch" placeholder="Escribe un juego..." type="text" />
+                        <div aria-live="polite" class="search-suggestions" id="searchSuggestions"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <!-- traslado de los juegos desde este div a el .js para guardarlo en arrays/testealo antes -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-contenido">
+            <div>
+                <h4>GAME LIVE CENTER</h4>
+                <p>Tu tienda digital de videojuegos favorita.</p>
+            </div>
+            <div>
+                <h4>Redes</h4>
+                <p><a href="https://www.facebook.com" rel="noopener noreferrer" target="_blank">Facebook</a></p>
+                <p><a href="https://www.instagram.com" rel="noopener noreferrer" target="_blank">Instagram</a></p>
+                <p><a href="https://www.tiktok.com" rel="noopener noreferrer" target="_blank">Tiktok</a></p>
+                <p><a href="https://discord.com" rel="noopener noreferrer" target="_blank">Discord</a></p>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <li><a href="../soporte/index.html">soporte@gamelivecenter.com</a></li>
+                <p></p>
+                <p>+51 978 563 753</p>
+            </div>
+        </div>
+        <p class="copy">
+            © 2026 GAME LIVE CENTER - Todos los derechos reservados
+        </p>
+    </footer>
+    <script src="../../js/catalogo-datos.js"></script>
+    <script>
+        // ================================================================
+        // El array "juegosCatalogo" (con TODOS los juegos) viene del
+        // archivo externo js/catalogo-datos.js. Aquí solo se usa para:
+        //   1) Construir las cards en el DOM (dentro de <div class="cards">)
+        //   2) Armar "catalogoJuegos": el mismo array, pero con la
+        //      referencia a su <div class="card"> ya creada en el DOM,
+        //      para que buscador, filtros y carrito trabajen sobre él.
+        // ================================================================
+
+        function normalizeGameName(name) {
+            return (name || '')
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, ' ')
+                .replace(/\u2019/g, "'");
+        }
+
+        function parsePrecio(texto) {
+            if (!texto) return 0;
+            const limpio = texto.toLowerCase().replace("s/", "").replace("gratuito", "0").trim();
+            return parseFloat(limpio) || 0;
+        }
+
+        // ================================================================
+        // 1) RENDERIZAR LAS CARDS EN EL DOM A PARTIR DE juegosCatalogo
+        // ================================================================
+        const cardsContainer = document.querySelector('.cards');
+
+        function crearCardElemento(juego) {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            if (juego.link) {
+                card.innerHTML = `
+                <a href="${juego.link}" class="game-link">
+                    <img src="${juego.imagen}" alt="${juego.alt || 'Juego'}">
+                    <h3>${juego.titulo}</h3>
+                </a>
+                <p>${juego.precioTexto}</p>
+            `;
+            } else {
+                card.innerHTML = `
+                <img src="${juego.imagen}" alt="${juego.alt || 'Juego'}">
+                <h3>${juego.titulo}</h3>
+                <p>${juego.precioTexto}</p>
+            `;
+            }
+            return card;
+        }
+
+        // ================================================================
+        // 2) ARRAY PRINCIPAL DEL CATÁLOGO (catalogoJuegos)
+        //    Se genera 1 a 1 desde juegosCatalogo, agregando la card ya
+        //    creada en el DOM. A partir de aquí, todo el resto del código
+        //    (buscador, filtros, carrito) trabaja sobre catalogoJuegos.
+        // ================================================================
+        const catalogoJuegos = juegosCatalogo.map((juego, index) => {
+            const card = crearCardElemento(juego);
+            cardsContainer.appendChild(card);
+
+            return {
+                id: index,
+                elemento: card,
+                titulo: juego.titulo,
+                normalizedTitle: normalizeGameName(juego.titulo),
+                precioTexto: juego.precioTexto,
+                precio: parsePrecio(juego.precioTexto),
+                imagen: juego.imagen,
+                url: juego.link || '',
+                generos: juego.generos || [],
+                plataforma: juego.plataforma || '',
+                tieneMetadata: (juego.generos && juego.generos.length > 0) || !!juego.plataforma
+            };
+        });
+
+        // Disponible globalmente por si se necesita reutilizar en otro script
+        window.catalogoJuegos = catalogoJuegos;
+
+        // Actualiza el contador del encabezado)
+        const listHeaderTitle = document.querySelector('.list-header h2');
+        if (listHeaderTitle) {
+            listHeaderTitle.textContent = `Todos los Juegos (${catalogoJuegos.length})`;
+        }
+
+        // ================================================================
+        // 3) BUSCADOR + FILTROS POR GÉNERO Y PLATAFORMA
+        // ================================================================
+        const genreCheckboxes = document.querySelectorAll('.sidebar input[type="checkbox"]');
+        const platformRadios = document.querySelectorAll('.sidebar input[type="radio"]');
+        const searchInput = document.getElementById('gameSearch');
+        const suggestionsBox = document.getElementById('searchSuggestions');
+
+        function shouldShowGame(juego, searchQuery = '') {
+            const normalizedQuery = normalizeGameName(searchQuery);
+            const searchMatch = !normalizedQuery || juego.normalizedTitle.includes(normalizedQuery);
+
+            // Si el juego no tiene metadata (género/plataforma), solo se filtra por búsqueda
+            if (!juego.tieneMetadata) {
+                return searchMatch;
+            }
+
+            const selectedGenres = Array.from(genreCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+
+            const selectedPlatform = Array.from(platformRadios)
+                .find(radio => radio.checked)?.value || '';
+
+            const genreMatch = selectedGenres.length === 0 || selectedGenres.some(genre => juego.generos.includes(genre));
+            const platformMatch = !selectedPlatform || (
+                Array.isArray(juego.plataforma)
+                    ? juego.plataforma.includes(selectedPlatform)
+                    : juego.plataforma === selectedPlatform
+            );
+
+            return searchMatch && genreMatch && platformMatch;
+        }
+
+        function filterCatalogCards() {
+            const searchQuery = searchInput ? searchInput.value : '';
+            catalogoJuegos.forEach(juego => {
+                juego.elemento.style.display = shouldShowGame(juego, searchQuery) ? '' : 'none';
+            });
+        }
+
+        function renderSuggestions(query) {
+            const normalizedQuery = normalizeGameName(query);
+
+            if (!normalizedQuery) {
+                suggestionsBox.innerHTML = '';
+                suggestionsBox.style.display = 'none';
+                return;
+            }
+
+            const matches = catalogoJuegos
+                .filter(item => item.normalizedTitle.includes(normalizedQuery))
+                .slice(0, 6);
+
+            if (!matches.length) {
+                suggestionsBox.innerHTML = '<div class="suggestion-item empty">Sin resultados</div>';
+                suggestionsBox.style.display = 'block';
+                return;
+            }
+
+            suggestionsBox.innerHTML = matches.map(item => `
+            <button type="button" class="suggestion-item" data-url="${item.url}">
+                ${item.titulo}
+            </button>
+        `).join('');
+
+            suggestionsBox.querySelectorAll('.suggestion-item').forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetUrl = button.getAttribute('data-url');
+                    if (targetUrl) {
+                        window.location.href = targetUrl;
+                    }
+                });
+            });
+
+            suggestionsBox.style.display = 'block';
+        }
+
+        genreCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterCatalogCards));
+        platformRadios.forEach(radio => radio.addEventListener('change', filterCatalogCards));
+
+        if (searchInput && suggestionsBox) {
+            searchInput.addEventListener('input', () => {
+                const query = searchInput.value.trim();
+                renderSuggestions(query);
+                filterCatalogCards();
+            });
+
+            searchInput.addEventListener('focus', () => {
+                renderSuggestions(searchInput.value);
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!searchInput.contains(event.target) && !suggestionsBox.contains(event.target)) {
+                    suggestionsBox.style.display = 'none';
+                }
+            });
+        }
+
+        // ================================================================
+        // 4) BOTÓN "Agregar" EN CADA CARD + FALLBACK DE IMÁGENES
+        // ================================================================
+        catalogoJuegos.forEach(juego => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'buy-cart';
+            button.textContent = 'Agregar';
+            juego.elemento.appendChild(button);
+        });
+
+        catalogoJuegos.forEach(juego => {
+            const img = juego.elemento.querySelector('img');
+            if (!img) return;
+            img.loading = 'lazy';
+            img.onerror = () => {
+                img.src = '../../imagen/catalogo/placeholder.svg';
+                img.onerror = null;
+            };
+        });
+    </script>
+
+    <script src="../../js/carrito.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>
