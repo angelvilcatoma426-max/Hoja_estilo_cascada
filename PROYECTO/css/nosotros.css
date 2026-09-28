@@ -1,0 +1,206 @@
+.nosotros-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+  animation: aparecer 1.5s ease forwards;
+}
+.sobre-nosotros {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 80px;
+}
+.sobre-nosotros:hover .texto-nosotros h2 {
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+}
+.texto-nosotros {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.texto-nosotros h2 {
+  color: #00ff88;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+.texto-nosotros p {
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+.imagen-nosotros {
+  flex: 1;
+}
+.imagen-nosotros img {
+  width: 100%;
+  border-radius: 15px;
+  border: 2px solid #00ff88;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+  transition: transform 0.5s cubic-bezier(0.1, 0.8, 0.3, 1), box-shadow 0.5s;
+}
+.imagen-nosotros:hover img {
+  transform: scale(1.04) rotate(1deg);
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+}
+.valores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+.valor {
+  background: #111;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  border-top: 4px solid #00ff88;
+  transition: transform 0.4s ease, box-shadow 0.4s, border-color 0.4s;
+}
+.valor:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 255, 136, 0.15);
+  border-top-color: #00cc6a;
+}
+.valor:hover h3 {
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+.valor h3 {
+  color: #00ff88;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+.redes-sociales {
+  text-align: center;
+  padding: 40px;
+  background: #0a0a0a;
+  border-radius: 20px;
+  border: 1px solid #1a1a1a;
+  transition: border-color 0.4s;
+}
+.redes-sociales:hover {
+  border-color: #222;
+}
+.redes-sociales h2 {
+  margin-bottom: 30px;
+  color: #fff;
+  font-size: 1.8rem;
+}
+.redes-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.red-link {
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s, box-shadow 0.3s;
+}
+.red-link:active {
+  transform: translateY(-2px) scale(0.98);
+}
+.facebook:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 20px rgba(24, 119, 242, 0.5);
+}
+.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: #e6683c;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 20px rgba(220, 39, 67, 0.5);
+}
+.tiktok:hover {
+  background: #000000;
+  border-color: #00f2fe;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: -3px 3px 15px rgba(255, 0, 80, 0.6), 3px -3px 15px rgba(0, 242, 254, 0.6);
+}
+.discord:hover {
+  background: #5865f2;
+  border-color: #5865f2;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 20px rgba(88, 101, 242, 0.5);
+}
+footer {
+  background: #171a21;
+  margin-top: 60px;
+  padding: 40px;
+}
+.footer-contenido {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.footer-contenido h4 {
+  margin-bottom: 15px;
+  color: #66f46b;
+}
+.footer-contenido a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s ease;
+  display: block;
+  padding: 5px 0;
+}
+.footer-contenido a:hover {
+  color: #00ff88;
+  transform: translateX(5px);
+}
+.footer-contenido p {
+  margin-bottom: 10px;
+  color: #ccc;
+  transition: 0.3s;
+}
+.footer-contenido p:hover {
+  color: #00ff88;
+  transform: translateX(5px);
+}
+.copy {
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  color: #aaa;
+}
+@media (max-width: 768px) {
+  .sobre-nosotros {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 0 15px;
+  }
+  .imagen-nosotros {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .imagen-nosotros img {
+    width: 100%;
+  }
+  .texto-nosotros h2 {
+    font-size: 2rem;
+  }
+  .valores {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .redes-links {
+    gap: 12px;
+  }
+  .red-link {
+    padding: 10px 22px;
+    width: 100%;
+    max-width: 280px;
+  }
+}
