@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Quieres hablar con nosotros</title>
+    <link href="../../css/style.css" rel="stylesheet" />
+    <link href="../../css/soporte.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🎮 GAME LIVE CENTER</h1>
+            </div>
+
+
+
+            <div class="nav-derecha"><input class="menu-toggle" id="menu-toggle" type="checkbox" />
+                <div class="perfil-cliente">
+                    <button aria-label="Perfil de usuario" class="perfil-icono" id="perfilIcono" type="button">
+                        <img alt="Perfil" id="perfilAvatar" src="" style="display:none;" />
+                        <svg fill="none" height="22" id="perfilIconoDefault" stroke="currentColor" stroke-width="2"
+                            viewbox="0 0 24 24" width="22">
+                            <circle cx="12" cy="8" r="4"></circle>
+                            <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
+                        </svg>
+                    </button>
+                    <div class="perfil-tooltip" id="perfilTooltip">
+                        <p class="perfil-tooltip-nombre" id="tooltipNombre"></p>
+                        <p class="perfil-tooltip-correo" id="tooltipCorreo"></p>
+                    </div>
+                </div><label class="hamburguesa" for="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <ul class="menu">
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../catalogo/index.html">Catálogo</a></li>
+                    <li><a href="../nosotros/index.html" style="color: #00ff88;">Nosotros</a></li>
+                    <li><a href="../registrar-tarjeta/index.html">Registro de tarjeta</a></li>
+                    <li><a href="../login/index.html">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="perfil-modal-overlay" id="perfilModalOverlay">
+            <div class="perfil-modal">
+                <button class="perfil-modal-cerrar" id="perfilModalCerrar" type="button">✕</button>
+                <div class="perfil-modal-avatar-wrap">
+                    <img alt="Foto de perfil" id="modalAvatar" src="" />
+                    <label class="perfil-cambiar-foto" for="perfilAvatarInput">Cambiar foto</label>
+                    <input accept="image/*" hidden="" id="perfilAvatarInput" type="file" />
+                </div>
+                <h3 id="modalNombre"></h3>
+                <p class="perfil-dato"><strong>Correo</strong><span id="modalCorreo"></span></p>
+                <p class="perfil-dato"><strong>ID de cuenta</strong><span id="modalId"></span></p>
+                <button class="perfil-logout" id="perfilLogout" type="button">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+    <main class="soporte-container">
+        <section class="soporte-hero">
+            <h2>¿En qué podemos ayudarte?</h2>
+            <p>Busca soluciones rápidas o contáctanos directamente.</p>
+        </section>
+        <div class="soporte-grid">
+            <section class="faqs">
+                <h3>Preguntas Frecuentes</h3>
+                <div class="faq-item">
+                    <h4>¿Cómo recibo mi código de juego?</h4>
+                    <p>Tras confirmar el pago, el código se envía automáticamente a tu correo registrado.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Qué métodos de pago aceptan?</h4>
+                    <p>Aceptamos tarjetas de crédito, débito y transferencias bancarias locales.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Mi código no funciona, ¿qué hago?</h4>
+                    <p>Verifica que lo estés canjeando en la plataforma correcta (Steam, Xbox, etc.) o contáctanos
+                        abajo.</p>
+                </div>
+            </section>
+            <section class="contacto-form">
+                <h3>Envíanos un mensaje</h3>
+                <!-- Se agregó el ID formSoporte -->
+                <form id="formSoporte">
+                    <div class="input-group">
+                        <label>Nombre completo</label>
+                        <input placeholder="Ej. Rodrigo Luján" required="" type="text" />
+                    </div>
+                    <div class="input-group">
+                        <label>Correo electrónico</label>
+                        <input placeholder="nombre@correo.com" required="" type="email" />
+                    </div>
+                    <div class="input-group">
+                        <label>Tipo de problema</label>
+                        <select required="">
+                            <option value="">Seleccione una opción</option>
+                            <option>Problema con el pago</option>
+                            <option>Error en código</option>
+                            <option>Duda sobre catálogo</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Mensaje</label>
+                        <textarea placeholder="Describe tu problema aquí..." required="" rows="5"></textarea>
+                    </div>
+                    <button class="btn-enviar" type="submit">Enviar Ticket</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-contenido">
+            <div>
+                <h4>GAME LIVE CENTER</h4>
+                <p>Tu tienda digital de videojuegos favorita.</p>
+            </div>
+            <div>
+                <h4>Redes</h4>
+                <p><a href="https://www.facebook.com" rel="noopener noreferrer" target="_blank">Facebook</a></p>
+                <p><a href="https://www.instagram.com" rel="noopener noreferrer" target="_blank">Instagram</a></p>
+                <p><a href="https://www.tiktok.com" rel="noopener noreferrer" target="_blank">Tiktok</a></p>
+                <p><a href="https://discord.com" rel="noopener noreferrer" target="_blank">Discord</a></p>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <li><a href="../soporte/index.html">soporte@gamelivecenter.com</a></li>
+                <p>+51 978 563 753</p>
+            </div>
+        </div>
+        <p class="copy">
+            © 2026 GAME LIVE CENTER - Todos los derechos reservados
+        </p>
+    </footer>
+    <!-- Script de validación añadido -->
+    <script>
+        const form = document.getElementById('formSoporte');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert("¡Gracias por tu mensaje! Hemos recibido tu ticket correctamente.");
+            form.reset();
+        });
+    </script>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>GAME LIVE CENTER | Tienda de Videojuegos</title>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <button class="btn-carrito" id="btnCarrito">🛒 Carrito</button>
+    <div class="modal" id="modalCarrito">
+        <div class="modal-content">
+            <span class="close" id="cerrarModal">×</span>
+            <h2>Tu carrito</h2>
+            <div class="lista-carrito" id="listaCarrito"></div>
+            <div class="estado-compra" id="estadoCompra">Tu carrito está listo.</div>
+            <div class="resumen">
+                <h3>Total: S/ <span id="totalCarrito">0.00</span></h3>
+            </div>
+            <button class="pagar" type="button">Pagar (simulado)</button>
+        </div>
+    </div>
+    <div class="modal modal-boleta" id="modalBoleta">
+        <div class="modal-content boleta-content">
+            <span class="close" id="cerrarBoleta">×</span>
+            <div class="boleta-header">
+                <h2>Boleta de compra</h2>
+                <p>GAME LIVE CENTER</p>
+            </div>
+            <p class="boleta-subtitle">Compra digital confirmada</p>
+            <div class="boleta-info">
+                <p><strong>Cliente:</strong> <span id="clienteBoleta">Usuario invitado</span></p>
+                <p><strong>Correo:</strong> <span id="correoBoleta">Sin correo registrado</span></p>
+                <p><strong>ID:</strong> <span id="documentoBoleta">Sin ID</span></p>
+                <p><strong>Fecha:</strong> <span id="fechaBoleta"></span></p>
+            </div>
+            <div class="detalle-boleta" id="detalleBoleta"></div>
+            <div class="resumen-boleta">
+                <h3>Total pagado: S/ <span id="totalBoleta">0.00</span></h3>
+            </div>
+            <button class="pagar" id="descargarBoleta" type="button">Descargar boleta</button>
+        </div>
+    </div>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🎮 GAME LIVE CENTER</h1>
+            </div>
+
+
+
+            <div class="nav-derecha"><input class="menu-toggle" id="menu-toggle" type="checkbox" />
+                <div class="perfil-cliente">
+                    <button aria-label="Perfil de usuario" class="perfil-icono" id="perfilIcono" type="button">
+                        <img alt="Perfil" id="perfilAvatar" src="" style="display:none;" />
+                        <svg fill="none" height="22" id="perfilIconoDefault" stroke="currentColor" stroke-width="2"
+                            viewbox="0 0 24 24" width="22">
+                            <circle cx="12" cy="8" r="4"></circle>
+                            <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
+                        </svg>
+                    </button>
+                    <div class="perfil-tooltip" id="perfilTooltip">
+                        <p class="perfil-tooltip-nombre" id="tooltipNombre"></p>
+                        <p class="perfil-tooltip-correo" id="tooltipCorreo"></p>
+                    </div>
+                </div><label class="hamburguesa" for="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <ul class="menu">
+                    <li><a href="paginas/catalogo/index.html">Catálogo</a></li>
+                    <li><a href="paginas/soporte/index.html">Soporte</a></li>
+                    <li><a href="paginas/nosotros/index.html" style="color: #00ff88;">Nosotros</a></li>
+                    <li><a href="paginas/registrar-tarjeta/index.html">Registro de tarjeta</a></li>
+                    <li><a href="paginas/login/index.html">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="perfil-modal-overlay" id="perfilModalOverlay">
+            <div class="perfil-modal">
+                <button class="perfil-modal-cerrar" id="perfilModalCerrar" type="button">✕</button>
+                <div class="perfil-modal-avatar-wrap">
+                    <img alt="Foto de perfil" id="modalAvatar" src="" />
+                    <label class="perfil-cambiar-foto" for="perfilAvatarInput">Cambiar foto</label>
+                    <input accept="image/*" hidden="" id="perfilAvatarInput" type="file" />
+                </div>
+                <h3 id="modalNombre"></h3>
+                <p class="perfil-dato"><strong>Correo</strong><span id="modalCorreo"></span></p>
+                <p class="perfil-dato"><strong>ID de cuenta</strong><span id="modalId"></span></p>
+                <button class="perfil-ver-mas" id="perfilVerMas" type="button">Ver más</button>
+                <button class="perfil-logout" id="perfilLogout" type="button">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+    <!-- Sección principal de bienvenida e introducción de la tienda -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Ahora más gaming en cada recarga</h2>
+            <p>
+                Compra videojuegos digitales, gift cards y ofertas exclusivas
+                al mejor precio del mercado.
+            </p>
+            <!-- Buscador de juegos dentro de la portada principal -->
+            <div class="buscador">
+                <input id="buscarJuego" placeholder="Buscar Marvel'Spider-man Remaster..." type="text" />
+                <button onclick="buscarJuego()" type="button">
+                    Buscar
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Sección de juegos destacados en la página de inicio -->
+    <section class="destacados">
+        <h2>🔥 Juegos Destacados</h2>
+        <!-- Tarjetas generadas dinámicamente por JavaScript desde los datos del catálogo -->
+        <div class="cards" id="destacadosGrid"></div>
+    </section>
+    <!-- Sección de listados adicionales: ofertas, gratis, preferencias, novedades y próximos lanzamientos -->
+    <section class="home-section ofertas">
+        <h2>🔥 Juegos en oferta</h2>
+        <div class="cards" id="ofertasGrid"></div>
+    </section>
+    <section class="home-section gratis">
+        <h2>🎁 Juegos gratis</h2>
+        <div class="cards" id="gratisGrid"></div>
+    </section>
+    <section class="home-section preferencias">
+        <h2>✨ Según tus preferencias</h2>
+        <div class="cards" id="preferenciasGrid"></div>
+    </section>
+    <section class="home-section lo-nuevo">
+        <h2>🆕 Lo nuevo</h2>
+        <div class="cards" id="novedadesGrid"></div>
+    </section>
+    <section class="home-section proximos">
+        <h2>⏳ Próximos juegos</h2>
+        <div class="cards" id="proximosGrid"></div>
+    </section>
+    <!-- Sección de beneficios y ventajas de comprar en GAME LIVE CENTER -->
+    <section class="beneficios">
+        <div class="beneficio">
+            <h3>⚡ Entrega instantánea</h3>
+            <p>Recibe tu código al instante después de comprar.</p>
+        </div>
+        <div class="beneficio">
+            <h3>🔒 Compra segura</h3>
+            <p>Pagos protegidos y soporte garantizado.</p>
+        </div>
+        <div class="beneficio">
+            <h3>💸 Mejores ofertas</h3>
+            <p>Descuentos exclusivos todos los días.</p>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-contenido">
+            <div>
+                <h4>GAME LIVE CENTER</h4>
+                <p>Tu tienda digital de videojuegos favorita.</p>
+            </div>
+            <div>
+                <h4>Redes</h4>
+                <p>Facebook</p>
+                <p>Instagram</p>
+                <p>Tiktok</p>
+                <p>Discord</p>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <li><a href="paginas/soporte/index.html">soporte@gamelivecenter.com</a></li>
+                <p></p>
+                <p>+51 978 563 753</p>
+            </div>
+        </div>
+        <p class="copy">
+            © 2026 GAME LIVE CENTER - Todos los derechos reservados
+        </p>
+    </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <script src="js/catalogo-datos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/carrito.js"></script>
+</body>
+
+</html>
