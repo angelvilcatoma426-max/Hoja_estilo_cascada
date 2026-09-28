@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Terraria | GAME LIVE CENTER</title>
+<link href="../../css/terraria.css" rel="stylesheet"/>
+<link href="../../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<script>
+
+    let slideActual = 0;
+
+    window.onload = function () {
+        mostrarSlide(0);
+    };
+
+    function mostrarSlide(index) {
+
+        const slides = document.querySelectorAll(".slide");
+
+        slides.forEach(slide => {
+            slide.style.display = "none";
+        });
+
+        slides[index].style.display = "block";
+
+        slideActual = index;
+    }
+
+    function moverMiniaturas(direccion) {
+
+        const contenedor = document.getElementById("miniaturas");
+
+        contenedor.scrollLeft += direccion * 220;
+    }
+
+</script>
+<header>
+<nav class="navbar">
+<div class="logo">
+<h1>🎮 GAME LIVE CENTER</h1>
+</div>
+
+
+
+<div class="nav-derecha"><input class="menu-toggle" id="menu-toggle" type="checkbox"/><div class="perfil-cliente">
+<button aria-label="Perfil de usuario" class="perfil-icono" id="perfilIcono" type="button">
+<img alt="Perfil" id="perfilAvatar" src="" style="display:none;"/>
+<svg fill="none" height="22" id="perfilIconoDefault" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="22">
+<circle cx="12" cy="8" r="4"></circle>
+<path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
+</svg>
+</button>
+<div class="perfil-tooltip" id="perfilTooltip">
+<p class="perfil-tooltip-nombre" id="tooltipNombre"></p>
+<p class="perfil-tooltip-correo" id="tooltipCorreo"></p>
+</div>
+</div><label class="hamburguesa" for="menu-toggle">
+<span></span>
+<span></span>
+<span></span>
+</label><ul class="menu">
+<li><a href="../../index.html">Inicio</a></li>
+<li><a href="../catalogo/index.html">Catálogo</a></li>
+<li><a href="../soporte/index.html">Soporte</a></li>
+<li><a href="../nosotros/index.html" style="color: #00ff88;">Nosotros</a></li>
+<li><a href="../registrar-tarjeta/index.html">Registro de tarjeta</a></li>
+<li><a href="../login/index.html">Login</a></li>
+</ul></div></nav><div class="perfil-modal-overlay" id="perfilModalOverlay">
+<div class="perfil-modal">
+<button class="perfil-modal-cerrar" id="perfilModalCerrar" type="button">✕</button>
+<div class="perfil-modal-avatar-wrap">
+<img alt="Foto de perfil" id="modalAvatar" src=""/>
+<label class="perfil-cambiar-foto" for="perfilAvatarInput">Cambiar foto</label>
+<input accept="image/*" hidden="" id="perfilAvatarInput" type="file"/>
+</div>
+<h3 id="modalNombre"></h3>
+<p class="perfil-dato"><strong>Correo</strong><span id="modalCorreo"></span></p>
+<p class="perfil-dato"><strong>ID de cuenta</strong><span id="modalId"></span></p>
+<button class="perfil-logout" id="perfilLogout" type="button">Cerrar sesión</button>
+</div>
+</div>
+</header>
+<main class="detalle-juego">
+<h2>Terraria</h2>
+<section class="juego-principal">
+<!-- IZQUIERDA -->
+<div class="galeria">
+<!-- VISOR -->
+<div class="visor-principal">
+<div class="slide">
+<img class="media-principal" src="../../imagen/terraria/terraria1.jpg"/>
+</div>
+<div class="slide">
+<img class="media-principal" src="../../imagen/terraria/terraria2.jpg"/>
+</div>
+<div class="slide">
+<img class="media-principal" src="../../imagen/terraria/terraria3.jpg"/>
+</div>
+<div class="slide">
+<img class="media-principal" src="../../imagen/terraria/terraria4.jpg"/>
+</div>
+<div class="slide">
+<img class="media-principal" src="../../imagen/terraria/terraria5.jpg"/>
+</div>
+<div class="slide">
+<img class="media-principal" src="../../imagen/terraria/terraria6.jpg"/>
+</div>
+<div class="slide">
+<img class="media-principal" src="../../imagen/terraria/terraria7.jpg"/>
+</div>
+<div class="slide">
+<img class="media-principal" src="../../imagen/terraria/terraria8.jpg"/>
+</div>
+<div class="slide">
+<img class="media-principal" src="../../imagen/terraria/terraria9.jpg"/>
+</div>
+<div class="slide">
+<img class="media-principal" src="../../imagen/terraria/terraria10.jpg"/>
+</div>
+</div>
+<!-- MINIATURAS -->
+<div class="contenedor-miniaturas">
+<button class="flecha" onclick="moverMiniaturas(-1)">
+                    ❮
+                </button>
+<div class="miniaturas" id="miniaturas">
+<img onclick="mostrarSlide(0)" src="../../imagen/terraria/terraria1.jpg"/>
+<img onclick="mostrarSlide(1)" src="../../imagen/terraria/terraria2.jpg"/>
+<img onclick="mostrarSlide(2)" src="../../imagen/terraria/terraria3.jpg"/>
+<img onclick="mostrarSlide(3)" src="../../imagen/terraria/terraria4.jpg"/>
+<img onclick="mostrarSlide(4)" src="../../imagen/terraria/terraria5.jpg"/>
+<img onclick="mostrarSlide(5)" src="../../imagen/terraria/terraria6.jpg"/>
+<img onclick="mostrarSlide(6)" src="../../imagen/terraria/terraria7.jpg"/>
+<img onclick="mostrarSlide(7)" src="../../imagen/terraria/terraria8.jpg"/>
+<img onclick="mostrarSlide(8)" src="../../imagen/terraria/terraria9.jpg"/>
+<img onclick="mostrarSlide(9)" src="../../imagen/terraria/terraria10.jpg"/>
+</div>
+<button class="flecha" onclick="moverMiniaturas(1)">
+                    ❯
+                </button>
+</div>
+</div>
+<!-- DERECHA -->
+<div class="info-juego">
+<p>
+                ¡Cava, lucha, explora, construye! Nada es imposible en este juego de aventuras lleno de acción. ¡También disponible el paquete de cuatro!
+            </p>
+<p><strong>Reseñas:</strong> Extremadamente positivas</p>
+<p><strong>Fecha de lanzamiento:</strong> 16 MAY 2011</p>
+<p><strong>Desarrollador:</strong> Re-Logic</p>
+<p><strong>Editor:</strong> Re-Logic</p>
+<p><strong>Género:</strong> Fabricación y supervivencia en mundo abierto, Sandbox, Supervivencia, 2D, Multijugador, Pixelados</p>
+<div class="precio-box">
+<span class="precio">S/ 24.00</span>
+<a href="../registrar-tarjeta/index.html">
+<button>Comprar ahora</button>
+</a>
+</div>
+</div>
+</section>
+<!-- DESCRIPCIÓN -->
+<section class="descripcion">
+<h3>Acerca de este juego</h3>
+<p>
+        Excava, lucha, explora, construye: el mundo entero está a tu alcance mientras luchas por la supervivencia, la fortuna y la gloria. ¿Te adentrarás en vastas cavernas en busca de tesoros y materias primas para crear equipo, maquinaria y diseños cada vez más sofisticados? ¿O quizás prefieras enfrentarte a enemigos cada vez más poderosos para poner a prueba tu valentía en combate? ¿Tal vez decidas construir tu propia ciudad para albergar a los misteriosos aliados que encuentres en tus viajes?
+    </p>
+<h4>¡En el mundo de Terraria, la decisión es tuya!</h4>
+<p>
+        Combinando elementos de los juegos de acción clásicos con la libertad creativa de un mundo abierto, Terraria ofrece una experiencia de juego única donde tanto el viaje como el destino están completamente en manos del jugador. ¡La aventura de Terraria es tan única como los propios jugadores!    
+    </p>
+<p>
+        ¿Estás preparado para la monumental tarea de explorar, crear y defender tu propio mundo?   
+    </p>
+<h4>Características principales:</h4>
+<p>
+        Modo libre   
+    </p>
+<p>
+        Mundos generados aleatoriamente  
+    </p>
+<p>
+        Actualizaciones de contenido gratuitas  
+    </p>
+<section class="requisitos">
+<div class="requisitos-box"><p class="requisitos-intro">Requiere un procesador y un sistema operativo de 64 bits</p><table class="tabla-requisitos"><thead><tr><th>Requisito</th><th>Mínimo</th><th>Recomendado</th></tr></thead><tbody><tr><td class="req-etiqueta">OS</td><td>Windows Xp, Vista, 7, 8/8.1, 10</td><td>Windows 7, 8/8.1, 10</td></tr><tr><td class="req-etiqueta">PROCESADOR</td><td>2.0 Ghz</td><td>Doble núcleo de 3.0 GHz</td></tr><tr><td class="req-etiqueta">MEMORIA</td><td>2.5GB</td><td>4 GB</td></tr><tr><td class="req-etiqueta">GRÁFICOS</td><td>128 MB de memoria de video, compatible con Shader Model 2.0+
+DirectX®: 9.0c o superior</td><td>256 MB de memoria de video, compatible con Shader Model 2.0+
+DirectX®: 9.0c o superior</td></tr><tr><td class="req-etiqueta">ALMACENAMIENTO</td><td>200MB</td><td>200 MB</td></tr></tbody></table></div>
+</section>
+</section>
+</main>
+<footer>
+<div class="footer-contenido">
+<div>
+<h4>GAME LIVE CENTER</h4>
+<p>Tu tienda digital de videojuegos favorita.</p>
+</div>
+<div>
+<h4>Redes</h4>
+<p><a href="https://www.facebook.com" rel="noopener noreferrer" target="_blank">Facebook</a></p>
+<p><a href="https://www.instagram.com" rel="noopener noreferrer" target="_blank">Instagram</a></p>
+<p><a href="https://www.tiktok.com" rel="noopener noreferrer" target="_blank">Tiktok</a></p>
+<p><a href="https://discord.com" rel="noopener noreferrer" target="_blank">Discord</a></p>
+</div>
+<div>
+<h4>Contacto</h4>
+<li><a href="../soporte/index.html">soporte@gamelivecenter.com</a></li>
+<p></p>
+<p>+51 978 563 753</p>
+</div>
+</div>
+<p class="copy">
+        © 2026 GAME LIVE CENTER - Todos los derechos reservados
+    </p>
+</footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>
