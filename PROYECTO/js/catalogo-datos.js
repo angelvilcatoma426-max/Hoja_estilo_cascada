@@ -183,7 +183,7 @@ const juegosCatalogo = [
     {
         titulo: "Horizon Forbidden West",
         precioTexto: "S/ 179.00",
-        imagen: "../../imagen/inicio/Call_of_Duty_Infinite_Warfare_cover.jpg",
+        imagen: "../../imagen/catalogo/HORINZON.jpg",
         alt: "Juego",
         link: null,
         generos: [],
@@ -201,7 +201,7 @@ const juegosCatalogo = [
     {
         titulo: "Cyberpunk 2077",
         precioTexto: "S/ 99.00",
-        imagen: "../../imagen/inicio/apps.808.14492077886571533.be42f4bd-887b-4430-8ed0-622341b4d2b0.jpg",
+        imagen: "../../imagen/catalogo/CYBERPUNK 2077.jpg",
         alt: "Juego",
         link: null,
         generos: [],
@@ -210,7 +210,7 @@ const juegosCatalogo = [
     {
         titulo: "The Last of Us Part II",
         precioTexto: "S/ 159.00",
-        imagen: "../../imagen/inicio/Grand_Theft_Auto_V.png",
+        imagen: "../../imagen/catalogo/THE LAST OF US 2.jpg",
         alt: "Juego",
         link: null,
         generos: [],
@@ -219,7 +219,7 @@ const juegosCatalogo = [
     {
         titulo: "Sekiro: Shadows Die Twice",
         precioTexto: "S/ 89.00",
-        imagen: "../../imagen/catalogo/qx8Tbt_P4s0CUWhUi0zXERfNW1s7_qGS5WbBO_uVudI.jpg",
+        imagen: "../../imagen/catalogo/Sekiro_art.jpg",
         alt: "Juego",
         link: null,
         generos: [],
@@ -228,7 +228,7 @@ const juegosCatalogo = [
     {
         titulo: "Death Stranding",
         precioTexto: "S/ 129.00",
-        imagen: "../../imagen/catalogo/gJJVAws2CFzIkFt2AFK-N9zoSJ6X8O1NIAQB9nFHBzU.jpg",
+        imagen: "../../imagen/catalogo/DEATH STRANDING.jpg",
         alt: "Juego",
         link: null,
         generos: [],
@@ -246,7 +246,7 @@ const juegosCatalogo = [
     {
         titulo: "Stardew Valley",
         precioTexto: "S/ 24.00",
-        imagen: "../../imagen/catalogo/ts6ceuy9nu1sgwpeabmo.jpg",
+        imagen: "../../imagen/catalogo/STARDEW VALLEY.png",
         alt: "Juego",
         link: null,
         generos: [],
@@ -255,7 +255,7 @@ const juegosCatalogo = [
     {
         titulo: "Fortnite",
         precioTexto: "S/ 0.00",
-        imagen: "../../imagen/catalogo/HCs7H-ouO5ztZr1VHz9vdW95E6C0idGfaupRDgms_0k.jpg",
+        imagen: "../../imagen/catalogo/forniteee.jpg",
         alt: "Juego",
         link: null,
         generos: [],
@@ -264,7 +264,7 @@ const juegosCatalogo = [
     {
         titulo: "Apex Legends",
         precioTexto: "S/ 0.00",
-        imagen: "../../imagen/catalogo/OHwigC91bAhgTtrpogp-KSOfj9XDDBpfzrZ63FCgZ1Y.jpg",
+        imagen: "../../imagen/catalogo/APEX.jpg",
         alt: "Juego",
         link: null,
         generos: [],
@@ -273,7 +273,7 @@ const juegosCatalogo = [
     {
         titulo: "Overwatch 2",
         precioTexto: "S/ 0.00",
-        imagen: "../../imagen/catalogo/overwatch2.jpg",
+        imagen: "../../imagen/catalogo/OVERWATCH2.jpg",
         alt: "Juego",
         link: null,
         generos: [],
@@ -282,7 +282,7 @@ const juegosCatalogo = [
     {
         titulo: "Doom Eternal",
         precioTexto: "S/ 79.00",
-        imagen: "../../imagen/catalogo/J7CAZPlRs2OD34hQwt89BVIh3hZMX-5D66GjfV5ZZhk.jpg",
+        imagen: "../../imagen/catalogo/DOOM.jpg",
         alt: "Juego",
         link: null,
         generos: [],
@@ -291,7 +291,7 @@ const juegosCatalogo = [
     {
         titulo: "Ori and the Will of the Wisps",
         precioTexto: "S/ 49.00",
-        imagen: "../../imagen/catalogo/nNWKg5SRKbooP-Ex5XGAHiQWVYqw3lYN_ckD2xjfMFA.jpg",
+        imagen: "../../imagen/catalogo/Ori-and-the-Will-of-the-Wisps.jpg",
         alt: "Juego",
         link: null,
         generos: [],
@@ -309,7 +309,7 @@ const juegosCatalogo = [
     {
         titulo: "Metro Exodus",
         precioTexto: "S/ 79.00",
-        imagen: "../../imagen/catalogo/bZaKewI.png",
+        imagen: "../../imagen/catalogo/metro-exodus.jpg",
         alt: "Juego",
         link: null,
         generos: [],
@@ -318,7 +318,7 @@ const juegosCatalogo = [
     {
         titulo: "Genshin Impact",
         precioTexto: "gratuito",
-        imagen: "../../imagen/catalogo/genshin-impact.jpg",
+        imagen: "../../imagen/catalogo/genshin impact.jpg",
         alt: "Genshin Impact",
         link: null,
         generos: [],
@@ -327,7 +327,7 @@ const juegosCatalogo = [
     {
         titulo: "Honkai: Star Rail",
         precioTexto: "S/ 40.00",
-        imagen: "../../imagen/catalogo/bZaKewI.png",
+        imagen: "../../imagen/catalogo/HONKAI STAR RAIL.jpg",
         alt: "Honkai: Star Rail",
         link: null,
         generos: [],
@@ -336,7 +336,7 @@ const juegosCatalogo = [
     {
         titulo: "Zenless Zone Zero",
         precioTexto: "S/ 50.00",
-        imagen: "../../imagen/catalogo/Byh5MPnoJInGirgG_zHK9pSfIFrl0RTDxQbsiXLBLLY.jpg",
+        imagen: "../../imagen/catalogo/zenless lucia.jpg",
         alt: "Zenless Zone Zero",
         link: null,
         generos: [],

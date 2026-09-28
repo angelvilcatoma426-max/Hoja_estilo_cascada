@@ -32,12 +32,12 @@ const imagenesProductos = [
     "imagen/inicio/Call_of_Duty_Infinite_Warfare_cover.jpg",
     "imagen/inicio/Grand_Theft_Auto_V.png",
     "imagen/catalogo/HORINZON.jpg",
-    "imagen/catalogo/cyberpunk-2077.jpg",
-    "imagen/catalogo/the-last-of-us-2.jpg",
+    "imagen/catalogo/CYBERPUNK 2077.jpg",
+    "imagen/catalogo/THE LAST OF US 2.jpg",
     "imagen/catalogo/Sekiro_art.jpg",
-    "imagen/catalogo/death-stranding.jpg",
+    "imagen/catalogo/DEATH STRANDING.jpg",
     "imagen/catalogo/HADES.jpg",
-    "imagen/catalogo/stardew-valley.png"
+    "imagen/catalogo/STARDEW VALLEY.png"
 ];
 
 const juegosOferta = [
@@ -48,23 +48,23 @@ const juegosOferta = [
 
 const juegosGratis = [
     { titulo: "Fortnite", imagen: "imagen/catalogo/forniteee.jpg", precio: "S/ 0.00" },
-    { titulo: "Genshin Impact", imagen: "imagen/catalogo/genshin-impact.jpg", precio: "S/ 0.00" },
+    { titulo: "Genshin Impact", imagen: "imagen/catalogo/genshin impact.jpg", precio: "S/ 0.00" },
     { titulo: "Apex Legends", imagen: "imagen/catalogo/APEX.jpg", precio: "S/ 0.00" },
-    { titulo: "Zenless Zone Zero", imagen: "imagen/catalogo/zenless-lucia.jpg", precio: "S/ 0.00" }
+    { titulo: "Zenless Zone Zero", imagen: "imagen/catalogo/zenless lucia.jpg", precio: "S/ 0.00" }
 ];
 
 const juegosPreferencias = [
     { titulo: "Hades", imagen: "imagen/catalogo/HADES.jpg", precio: "S/ 39.00" },
-    { titulo: "Cyberpunk 2077", imagen: "imagen/catalogo/cyberpunk-2077.jpg", precio: "S/ 99.00" },
+    { titulo: "Cyberpunk 2077", imagen: "imagen/catalogo/CYBERPUNK 2077.jpg", precio: "S/ 99.00" },
     { titulo: "Sekiro: Shadows Die Twice", imagen: "imagen/catalogo/Sekiro_art.jpg", precio: "S/ 89.00" },
     { titulo: "Doom Eternal", imagen: "imagen/catalogo/DOOM.jpg", precio: "S/ 79.00" },
     { titulo: "Ori and the Will of the Wisps", imagen: "imagen/catalogo/Ori-and-the-Will-of-the-Wisps.jpg", precio: "S/ 49.00" }
 ];
 
 const juegosNovedades = [
-    { titulo: "Zenless Zone Zero", imagen: "imagen/catalogo/zenless-lucia.jpg", precio: "S/ 0.00" },
+    { titulo: "Zenless Zone Zero", imagen: "imagen/catalogo/zenless lucia.jpg", precio: "S/ 0.00" },
     { titulo: "Horizon Forbidden West", imagen: "imagen/catalogo/HORINZON.jpg", precio: "S/ 179.00" },
-    { titulo: "Death Stranding", imagen: "imagen/catalogo/death-stranding.jpg", precio: "S/ 129.00" },
+    { titulo: "Death Stranding", imagen: "imagen/catalogo/DEATH STRANDING.jpg", precio: "S/ 129.00" },
     { titulo: "Resident evil requiem", imagen: "imagen/catalogo/Byh5MPnoJInGirgG_zHK9pSfIFrl0RTDxQbsiXLBLLY.jpg", precio: "S/ 134.00" },
     { titulo: "Hollow Knight: Silksong", imagen: "imagen/catalogo/Silksong.jpg", precio: "S/ 42.99" }
 ];
