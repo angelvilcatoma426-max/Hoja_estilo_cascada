@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruta Frontend · Laboratorio LESS</title>
+  <link rel="stylesheet" href="dist/css/main.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="#" class="brand">Ruta Frontend</a>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#rutas">Rutas</a></li>
+          <li><a href="#agenda">Agenda</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero__layout">
+        <div class="hero__content">
+          <p class="eyebrow">Laboratorio LESS</p>
+          <h1>Construye estilos que puedan crecer contigo</h1>
+          <p class="lead">Organiza tokens, herramientas y componentes sin perder trazabilidad.</p>
+          <div class="button-group">
+            <a href="#rutas" class="button button--primary">Explorar rutas</a>
+            <a href="#agenda" class="button button--secondary">Ver agenda</a>
+          </div>
+        </div>
+        <div class="hero__panel">
+          <span class="badge">6 módulos Less</span>
+          <span class="badge">1 punto de entrada</span>
+          <span class="badge">CSS + source map</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="rutas" class="section">
+      <div class="container">
+        <p class="eyebrow">Rutas de aprendizaje</p>
+        <h2>Selecciona tu siguiente práctica</h2>
+        <div class="card-grid">
+          <article class="card card--featured card--beginner">
+            <span class="badge">Recomendada</span>
+            <h3>Interfaces responsivas</h3>
+            <p>Combina Grid, Flexbox y breakpoints definidos por el contenido.</p>
+            <a href="#">Abrir ruta</a>
+          </article>
+          <article class="card card--intermediate">
+            <span class="badge">Arquitectura</span>
+            <h3>Sistemas de estilos</h3>
+            <p>Separa tokens, utilidades y componentes con responsabilidades claras.</p>
+            <a href="#">Abrir ruta</a>
+          </article>
+          <article class="card card--advanced">
+            <span class="badge">Calidad</span>
+            <h3>Pruebas visuales</h3>
+            <p>Verifica reflujo, foco, zoom, texto largo y comportamiento extremo.</p>
+            <a href="#">Abrir ruta</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="agenda" class="section section--tinted">
+      <div class="container split-layout">
+        <div>
+          <p class="eyebrow">Agenda técnica</p>
+          <h2>Lo que debes comprobar hoy</h2>
+          <ul class="check-list">
+            <li>Build reproducible</li>
+            <li>Source map operativo</li>
+            <li>Foco visible</li>
+            <li>Sin scroll horizontal</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Semana 6 · LESS</h3>
+          <p>Verifica los resultados en DevTools conectando con los archivos fuentes .less.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>&copy; 2026 Ruta Frontend. Guía de laboratorio.</p>
+      <a href="#">Volver al contenido</a>
+    </div>
+  </footer>
+</body>
+</html>
