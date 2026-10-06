@@ -1,0 +1,9 @@
+# Dependencias locales (se generan con npm install)
+node_modules/
+
+# Archivos compilados (se generan con npm run build)
+dist/
+
+# Archivos de registro y temporales
+*.log
+.DS_Store

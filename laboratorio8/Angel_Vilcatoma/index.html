@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrontLab Talleres</title>
+  <!-- Cambiar entre dist/css/sass.css y dist/css/less.css según las pruebas -->
+  <link rel="stylesheet" href="dist/css/sass.css">
+</head>
+<body>
+
+  <a href="#contenido" class="skip-link">Ir al contenido</a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <strong>FrontLab Talleres</strong>
+      <nav>
+        <a href="#talleres">Ver talleres</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero container">
+      <p class="muted">Aprendizaje práctico de desarrollo web</p>
+      <h1>Elige tu próximo taller</h1>
+      <p>Revisa los temas y solicita información por correo.</p>
+    </section>
+
+    <section id="talleres" class="container">
+      <h2>Talleres disponibles</h2>
+      
+      <div class="workshops">
+        <article class="card">
+          <span class="badge badge--open">Disponible</span>
+          <h3 class="card__title">Interfaces responsivas</h3>
+          <p>Grid y Flexbox para contenidos que se adaptan.</p>
+          <p class="muted">Duración de 6 horas</p>
+          <a href="mailto:info@example.com?subject=Consulta%20Taller%20Responsivo" class="button card__action">Consultar taller responsivo</a>
+        </article>
+
+        <article class="card">
+          <span class="badge badge--open">Disponible</span>
+          <h3 class="card__title">Sass modular</h3>
+          <p>Tokens, módulos y patrones de estilos reutilizables.</p>
+          <p class="muted">Duración de 8 horas</p>
+          <a href="mailto:info@example.com?subject=Consulta%20Taller%20Sass" class="button card__action">Consultar taller de Sass</a>
+        </article>
+
+        <article class="card">
+          <span class="badge badge--full">Sin vacantes</span>
+          <h3 class="card__title">Less aplicado</h3>
+          <p>Mixins y guards para variantes de componentes.</p>
+          <p class="muted">Duración de 8 horas</p>
+          <a href="mailto:info@example.com?subject=Lista%20de%20espera%20Less" class="button button--outline card__action">Consultar lista de espera</a>
+        </article>
+
+        <article class="card">
+          <span class="badge badge--soon">Próximamente</span>
+          <h3 class="card__title">Arquitectura CSS Avanzada</h3>
+          <p>Estrategias avanzadas de mantenibilidad y rendimiento CSS.</p>
+          <p class="muted">Duración de 10 horas</p>
+          <a href="mailto:info@example.com?subject=Consulta%20Taller%20Arquitectura%20CSS" class="button button--outline card__action">Consultar próximo taller</a>
+        </article>
+      </div>
+
+      <section class="info-panel">
+        <h3>Orientación académica</h3>
+        <p>Si no estás seguro de qué taller elegir, te recomendamos comenzar por Interfaces Responsivas si eres principiante, o continuar con Sass y Less si buscas estructurar proyectos complejos a nivel profesional.</p>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>FrontLab Talleres — Proyecto académico de CSS Avanzado</p>
+  </footer>
+
+</body>
+</html>
