@@ -8,6 +8,36 @@
     "watch:style": "lessc --watch less/style.less css/style.css"
   },
   "devDependencies": {
-    "less": "^4.2.0"
-  }
+    "less": "^4.9.1",
+    "less-watch-compiler": "^1.19.9"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "commander": "^15.0.0",
+    "copy-anything": "^3.0.5",
+    "debug": "^2.6.9",
+    "errno": "^0.1.8",
+    "extend": "^3.0.2",
+    "graceful-fs": "^4.2.11",
+    "iconv-lite": "^0.6.3",
+    "is-what": "^4.1.16",
+    "lodash.merge": "^4.6.2",
+    "make-dir": "^5.1.0",
+    "mime": "^1.6.0",
+    "ms": "^2.0.0",
+    "needle": "^3.5.0",
+    "parse-node-version": "^1.0.1",
+    "probe-image-size": "^7.4.0",
+    "prr": "^1.0.1",
+    "ret": "^0.5.1",
+    "safe-regex2": "^5.1.2",
+    "safer-buffer": "^2.1.2",
+    "sax": "^1.6.1",
+    "source-map": "^0.6.1",
+    "stream-parser": "^0.3.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
 }

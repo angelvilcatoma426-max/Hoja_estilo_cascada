@@ -1,0 +1,5 @@
+PROYECTO/node_modules/
+node_modules/
+PROYECTO/less/*.css
+PROYECTO/css/*.map
+.env

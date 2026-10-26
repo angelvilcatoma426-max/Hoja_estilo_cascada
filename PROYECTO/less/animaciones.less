@@ -1,0 +1,130 @@
+@import "motion-mixins.less";   // variables y mixins
+
+
+@keyframes entradaSuave {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+@keyframes pulsoNeon {
+    0%   { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.55); }
+    70%  { box-shadow: 0 0 0 16px rgba(0, 255, 136, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+}
+
+@keyframes girar {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes brilloBarrido {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    15%      { transform: scale(1.18); }
+    30%      { transform: scale(1); }
+    45%      { transform: scale(1.1); }
+}
+
+@keyframes fundir {
+    from { opacity: 0; transform: scale(1.03); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes sacudir {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+}
+
+@keyframes revelar {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes brillo {
+    0%, 100% { text-shadow: 0 0 0 rgba(0, 255, 136, 0); }
+    50%      { text-shadow: 0 0 14px rgba(0, 255, 136, 0.65); }
+}
+
+
+.hero .hero-content > p {
+    .animar(entradaSuave, @anim-media, @curva-salida, 0.15s);
+}
+.hero .buscador {
+    .animar(entradaSuave, @anim-media, @curva-salida, 0.35s);
+}
+
+.btn-carrito {
+    .animar(pulsoNeon, 2.4s, ease-out, 1s, infinite, normal, none);
+
+    &:hover,
+    &:focus-visible {
+        animation-play-state: paused;
+    }
+}
+
+
+.cards > .card {
+    .retraso-escalonado(12);
+}
+
+.beneficio h3 {
+    .animar(flotar, 3.2s, ease-in-out, 0s, infinite, normal, none);
+}
+.beneficio:nth-child(2) h3 { animation-delay: 0.4s; }
+.beneficio:nth-child(3) h3 { animation-delay: 0.8s; }
+.beneficio:hover h3 {
+    animation-play-state: paused;
+}
+
+
+.cargando {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    border-top-color: @verde-neon;
+    border-radius: 50%;
+    .animar(girar, 0.9s, linear, 0s, infinite, normal, none);
+}
+
+.esqueleto {
+    background: linear-gradient(90deg, #151515 25%, #262626 50%, #151515 75%);
+    background-size: 200% 100%;
+    .animar(brilloBarrido, 1.6s, linear, 0s, infinite, normal, none);
+    border-radius: 8px;
+    min-height: 18px;
+}
+
+
+.latido {
+    .animar(latido, 0.9s, ease-in-out, 0s, 1, normal, none);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        animation-delay: 0s !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
