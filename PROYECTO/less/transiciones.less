@@ -1,0 +1,93 @@
+// ============================================================
+// TEMA 10 - TRANSICIONES Y TRANSFORMACIONES CSS
+// Regla de oro: la transicion se declara en el estado BASE,
+// no en :hover, para que tambien haya retorno suave.
+// ============================================================
+
+@import "motion-mixins.less";   // variables y mixins (.transicionar, .levantar)
+
+// ---------- 1. ENLACES DEL MENU: subrayado que crece ----------
+//   transform: scaleX(0) -> scaleX(1)  +  transform-origin: left
+.navbar .menu li a {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -4px;
+        height: 2px;
+        background: @verde-neon;
+        transform: scaleX(0);
+        transform-origin: left center;               // pivote: crece desde la izquierda
+        .transicionar(transform, @t-normal, ease-out);
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+        transform: scaleX(1);
+    }
+}
+
+// ---------- 2. TARJETAS DE BENEFICIOS: translate + rotate + scale ----------
+.beneficio {
+    .transicionar(~"transform, box-shadow, border-color", @t-normal, ease);
+
+    &:hover {
+        .levantar(-8px, 1.03);
+        border-color: @verde-neon;
+        box-shadow: 0 14px 28px rgba(0, 255, 136, 0.16);
+    }
+}
+
+// ---------- 3. ICONO DE PERFIL: rotate + scale con rebote ----------
+.perfil-icono {
+    .transicionar(~"transform, box-shadow", @t-normal, @curva-rebote);
+
+    &:hover {
+        // El ORDEN importa: primero rota, luego escala sobre el eje ya girado
+        transform: rotate(12deg) scale(1.12);
+    }
+    &:active {
+        transform: rotate(0deg) scale(0.94);
+    }
+}
+
+// ---------- 4. BOTONES DE PAGO / CARRITO: feedback al pulsar ----------
+.pagar,
+.btn-carrito {
+    .transicionar(~"transform, background-color, box-shadow", @t-corta, ease);
+}
+.pagar:hover { transform: translateY(-2px); }
+.pagar:active,
+.btn-carrito:active { transform: scale(0.96); }
+
+// ---------- 5. HAMBURGUESA -> "X" (solo movil) ----------
+//   Tres barras que se transforman con translate + rotate.
+//   Barras: alto 4px, contenedor 34px, space-between => distancia entre centros = 15px
+.hamburguesa span {
+    .transicionar(~"transform, opacity", @t-normal, ease);
+    transform-origin: center;
+}
+.menu-toggle:checked ~ .hamburguesa {
+    span:nth-child(1) { transform: translateY(15px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    span:nth-child(3) { transform: translateY(-15px) rotate(-45deg); }
+}
+
+// ---------- 6. ENLACES / TEXTOS DEL PIE: desplazamiento horizontal ----------
+.footer-contenido a,
+.footer-contenido p {
+    .transicionar(~"transform, color", @t-normal, ease);
+}
+
+// ---------- 7. MODAL DEL CARRITO: entrada con escala ----------
+.modal-content {
+    .transicionar(~"transform, opacity", @t-normal, ease);
+}
+
+// ---------- 8. FEEDBACK AL PULSAR EN TODA LA TIENDA ----------
+button:not(:disabled):active {
+    transform: scale(0.97);
+}
