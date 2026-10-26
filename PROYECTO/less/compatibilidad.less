@@ -1,0 +1,146 @@
+// ============================================================
+// TEMA 11 - COMPATIBILIDAD ENTRE NAVEGADORES
+// Estrategia: MEJORA PROGRESIVA
+//   1) Base funcional y legible (una sola columna / flex) para todos.
+//   2) Mejoras condicionales con @supports solo si el navegador las entiende.
+//   3) Prefijos de proveedor (-webkit-) donde aun hacen falta.
+// Navegadores objetivo: Chrome, Firefox, Safari y Edge (minimo 3).
+// ============================================================
+
+@import "motion-mixins.less";   // .sin-seleccion(), .apariencia(), .desenfoque-fondo()
+
+// ============================================================
+// CAPA 1 - BASE FUNCIONAL (se importa al INICIO de style.less)
+// ============================================================
+.compat-base() {
+    // Tecnica A: valores de respaldo duplicados.
+    // El navegador que no entiende la ultima linea conserva la anterior.
+    html {
+        -webkit-text-size-adjust: 100%;   // evita zoom raro de texto en iOS
+        text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+    }
+    body {
+        min-height: 100vh;      // respaldo
+        min-height: 100dvh;     // navegadores que entienden "dvh" (movil moderno)
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    // Tecnica B: layout de respaldo con Flexbox.
+    // Los navegadores sin CSS Grid ignoran "display:grid" mas abajo
+    // y conservan este flex-wrap (las tarjetas siguen apareciendo).
+    .cards,
+    .beneficios {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin: -12px;
+    }
+    .cards > *,
+    .beneficios > * {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 230px;
+        flex: 1 1 230px;
+        margin: 12px;
+    }
+
+    // Controles de formulario con apariencia uniforme
+    input[type="search"] { .apariencia(none); }
+    .hamburguesa,
+    .btn-carrito,
+    .perfil-icono { .sin-seleccion(); }
+
+    // Autocompletado de Chrome/Safari: sin fondo amarillo
+    input:-webkit-autofill,
+    input:-webkit-autofill:focus {
+        -webkit-text-fill-color: #ffffff;
+        transition: background-color 9999s ease-out 0s;
+    }
+
+    // Foco accesible: base valida en TODOS los navegadores
+    a:focus,
+    button:focus,
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: 2px solid @verde-neon;
+        outline-offset: 2px;
+    }
+}
+
+// ============================================================
+// CAPA 2 - MEJORAS CONDICIONALES (se importa al FINAL de style.less)
+// Un @supports desconocido simplemente se ignora: la base sigue intacta.
+// ============================================================
+.compat-mejoras() {
+    // Tecnica D: Grid solo si existe. Se anulan los margenes del respaldo flex.
+    @supports (display: grid) {
+        .cards,
+        .beneficios {
+            margin: 0;
+        }
+        .cards > *,
+        .beneficios > * {
+            margin: 0;
+        }
+    }
+
+    // Tecnica E: efecto "vidrio" solo si hay backdrop-filter (con o sin prefijo).
+    // OJO: dos condiciones unidas con "or"; si no hay soporte queda el fondo oscuro solido.
+    @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+        .modal,
+        .perfil-modal-overlay {
+            background: rgba(0, 0, 0, 0.55);
+            .desenfoque-fondo(6px);
+        }
+    }
+
+    // Tecnica F: color-mix() solo si se reconoce (resplandor de tarjetas).
+    @supports (color: color-mix(in srgb, red 50%, blue)) {
+        .card:hover,
+        .beneficio:hover {
+            box-shadow: 0 12px 30px color-mix(in srgb, #00ff88 28%, transparent);
+        }
+    }
+
+    // Tecnica H: consulta de SELECTOR. Si ':focus-visible' no existe, el navegador
+    // ignora este bloque completo. NUNCA se mezcla con ':focus' en la misma lista,
+    // porque un selector desconocido invalidaria TODA la regla.
+    @supports selector(:focus-visible) {
+        a:focus:not(:focus-visible),
+        button:focus:not(:focus-visible) {
+            outline: none;     // sin aro al hacer clic con mouse
+        }
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid @verde-neon;
+            outline-offset: 3px;
+        }
+    }
+
+    // Tecnica J (Tema 9 + 11): animacion ligada al scroll.
+    // Solo en navegadores con "animation-timeline" y si el usuario no pidio menos movimiento.
+    // "backwards": antes de entrar se ve oculto, despues no bloquea los efectos :hover.
+    @supports (animation-timeline: view()) {
+        @media (prefers-reduced-motion: no-preference) {
+            .home-section h2,
+            .destacados h2,
+            .beneficio {
+                animation: revelar linear backwards;
+                animation-timeline: view();
+                animation-range: entry 0% cover 30%;
+            }
+        }
+    }
+
+    // Tecnica I: desplazamiento suave solo si el navegador lo soporta
+    @supports (scroll-behavior: smooth) {
+        html { scroll-behavior: smooth; }
+    }
+}
