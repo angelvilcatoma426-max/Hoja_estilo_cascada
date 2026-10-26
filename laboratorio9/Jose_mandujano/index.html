@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MotionLab - Laboratorio de Animaciones CSS</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a href="#contenido" class="skip-link">Ir al contenido</a>
+
+  <header class="site-header container">
+    <h1>MotionLab Talleres</h1>
+    <p>Laboratorio de animaciones CSS</p>
+  </header>
+
+  <main id="contenido" class="container">
+    <section class="lab">
+      <h2>Movimiento con propósito</h2>
+      <p>Explora los talleres y controla la demostración.</p>
+
+      <div class="panel-controls">
+        <h3>Panel de animaciones</h3>
+        <p>
+          Activar inicia las entradas y el indicador repetitivo.
+          Pausar detiene su avance. Desactivar restaura la vista.
+          Para repetir, desactiva y vuelve a activar.
+        </p>
+
+        <input type="checkbox" id="run">
+        <label for="run">Activar movimiento</label>
+
+        <input type="checkbox" id="pause">
+        <label for="pause">Pausar movimiento</label>
+
+        <p class="motion-note">
+          Si tu sistema pide movimiento reducido,
+          el catálogo permanece estático incluso al activar.
+        </p>
+      </div>
+
+      <div class="stage">
+        <div class="indicator">
+          <span class="indicator__dot" aria-hidden="true"></span>
+          <span>Indicador decorativo de la demostración</span>
+        </div>
+
+        <div class="demo-grid">
+          <!-- Tarjeta 1 -->
+          <article class="course-card">
+            <span class="tag">Diseño responsivo</span>
+            <h3>Grid y Flexbox</h3>
+            <p>Organiza contenido para diferentes pantallas.</p>
+            <a href="#orientacion" class="action">Orientación sobre diseño responsivo</a>
+          </article>
+
+          <!-- Tarjeta 2 -->
+          <article class="course-card course-card--second">
+            <span class="tag">Arquitectura CSS</span>
+            <h3>Sass y Less</h3>
+            <p>Reutiliza decisiones y patrones de estilos.</p>
+            <a href="#orientacion" class="action">Orientación sobre preprocesadores</a>
+          </article>
+
+          <!-- Tarjeta 3 -->
+          <article class="course-card course-card--third">
+            <span class="tag">Animaciones CSS</span>
+            <h3>Fotogramas y tiempos</h3>
+            <p>Controla secuencias sin ocultar información.</p>
+            <a href="#orientacion" class="action">Orientación sobre animaciones</a>
+          </article>
+
+          <!-- Tarjeta 4 (Reto de Extensión) -->
+          <article class="course-card course-card--fourth">
+            <span class="tag">Rendimiento Web</span>
+            <h3>Optimización CSS</h3>
+            <p>Mejora el rendimiento evitando reflows innecesarios.</p>
+            <a href="#orientacion" class="action">Orientación sobre rendimiento</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="orientacion" class="help">
+      <h2>Cómo elegir un taller</h2>
+      <p>Revisa los temas y tus conocimientos previos.</p>
+      <p>
+        Las animaciones ilustran una técnica de interfaz;
+        puedes consultar todo el catálogo sin activarlas.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>Proyecto académico de CSS Avanzado - UTP</p>
+  </footer>
+
+</body>
+</html>

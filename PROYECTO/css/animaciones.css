@@ -1,0 +1,504 @@
+
+:root {
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --verde: #00ff88;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+@keyframes subirSuave {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes aparecerCard {
+  from { opacity: 0; transform: translate3d(0, 30px, 0) scale(0.96); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes fundirModal {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes entrarModal {
+  from { opacity: 0; transform: translate3d(0, 40px, 0) scale(0.92); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes entrarItem {
+  from { opacity: 0; transform: translate3d(30px, 0, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+
+@keyframes neonGlitch {
+  0%, 100% { text-shadow: 0 0 6px rgba(0, 255, 136, 0.45); }
+  18%      { text-shadow: 0 0 6px rgba(0, 255, 136, 0.45); }
+  20%      { text-shadow: 3px 0 #ff0055, -3px 0 #00ffff, 0 0 10px rgba(0, 255, 136, 0.6); }
+  22%      { text-shadow: 0 0 6px rgba(0, 255, 136, 0.45); }
+  55%      { text-shadow: 0 0 16px rgba(0, 255, 136, 0.85); }
+  62%      { text-shadow: -3px 0 #00ffff, 3px 0 #ff0055, 0 0 10px rgba(0, 255, 136, 0.6); }
+  64%      { text-shadow: 0 0 6px rgba(0, 255, 136, 0.45); }
+}
+
+.navbar .logo h1,
+.hero h2 {
+  animation: neonGlitch 6s linear infinite;
+  transition: transform 0.35s var(--ease-spring);
+}
+
+.navbar .logo h1 {
+  transform-origin: left center;
+}
+
+.navbar .logo h1:hover {
+  letter-spacing: normal;
+  transform: scale(1.06);
+}
+
+.hero h2:hover {
+  letter-spacing: normal;
+  transform: scale(1.04);
+}
+
+
+@media (min-width: 769px) {
+  .navbar .menu li a {
+    position: relative;
+    display: inline-block;
+  }
+
+  .navbar .menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 2px;
+    background: var(--verde);
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.3s var(--ease-out);
+  }
+
+  .navbar .menu li a:hover::after,
+  .navbar .menu li a:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+}
+
+
+.hamburguesa span {
+  transition: transform 0.3s var(--ease-out), opacity 0.2s ease;
+}
+
+.menu-toggle:checked ~ .hamburguesa span:nth-child(1) {
+  transform: translateY(15px) rotate(45deg);
+}
+
+.menu-toggle:checked ~ .hamburguesa span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle:checked ~ .hamburguesa span:nth-child(3) {
+  transform: translateY(-15px) rotate(-45deg);
+}
+
+@keyframes desplegar {
+  from { opacity: 0; transform: translate3d(0, -10px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle:checked ~ .menu {
+    animation: desplegar 0.3s var(--ease-out) both;
+  }
+}
+
+
+@keyframes fondoHero {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(60px, 40px, 0); }
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, #0b0f0c, #132018, #0b2a1c, #0b0f0c);
+  background-size: 300% 300%;
+  animation: fondoHero 14s ease-in-out infinite;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 420px;
+  height: 420px;
+  top: -140px;
+  left: -90px;
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.18), transparent 65%);
+  animation: flotar 9s ease-in-out infinite;
+}
+
+.hero::after {
+  width: 380px;
+  height: 380px;
+  bottom: -160px;
+  right: -80px;
+  background: radial-gradient(circle, rgba(13, 59, 138, 0.4), transparent 65%);
+  animation: flotar 11s ease-in-out -4s infinite;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  animation: subirSuave 0.9s var(--ease-out) both;
+}
+
+/* ---------------------------------------------------------------------
+   5. BUSCADOR
+   --------------------------------------------------------------------- */
+.buscador input {
+  transition: box-shadow 0.3s ease, transform 0.3s var(--ease-out);
+}
+
+.buscador input:focus {
+  box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.55), 0 0 24px rgba(0, 255, 136, 0.35);
+  transform: scale(1.02);
+}
+
+.buscador button {
+  transition: background 0.3s ease, transform 0.2s var(--ease-out), box-shadow 0.3s ease;
+}
+
+.buscador button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.35);
+}
+
+.buscador button:active {
+  transform: translateY(0) scale(0.97);
+}
+
+
+.card {
+  position: relative;
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.cards .card {
+  animation: aparecerCard 0.6s var(--ease-out) backwards;
+}
+
+.cards .card:nth-child(1) { animation-delay: 0.05s; }
+.cards .card:nth-child(2) { animation-delay: 0.12s; }
+.cards .card:nth-child(3) { animation-delay: 0.19s; }
+.cards .card:nth-child(4) { animation-delay: 0.26s; }
+.cards .card:nth-child(5) { animation-delay: 0.33s; }
+.cards .card:nth-child(6) { animation-delay: 0.4s; }
+.cards .card:nth-child(7) { animation-delay: 0.47s; }
+.cards .card:nth-child(8) { animation-delay: 0.54s; }
+.cards .card:nth-child(n + 9) { animation-delay: 0.6s; }
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Destello que cruza la tarjeta al pasar el mouse */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+  transform: translateX(-150%) skewX(-20deg);
+  transition: transform 0.8s ease;
+}
+
+.card:hover::before {
+  transform: translateX(300%) skewX(-20deg);
+}
+
+.card p {
+  transition: text-shadow 0.35s ease;
+}
+
+.card:hover p {
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+}
+
+
+.card .buy-cart {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.card .buy-cart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+  transform: translateX(-120%);
+}
+
+.card .buy-cart:hover::after {
+  transform: translateX(120%);
+  transition: transform 0.6s ease;
+}
+
+.card .buy-cart:hover {
+  transform: translateY(-2px) scale(1.04);
+}
+
+.card .buy-cart:active {
+  transform: scale(0.95);
+}
+
+@keyframes pulsoCarrito {
+  0%   { box-shadow: 0 8px 20px rgba(0, 255, 136, 0.25), 0 0 0 0 rgba(0, 255, 136, 0.55); }
+  70%, 100% { box-shadow: 0 8px 20px rgba(0, 255, 136, 0.25), 0 0 0 18px rgba(0, 255, 136, 0); }
+}
+
+@keyframes bumpCarrito {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.25) rotate(-6deg); }
+  60%  { transform: scale(0.95) rotate(3deg); }
+  100% { transform: scale(1); }
+}
+
+.btn-carrito {
+  transition: transform 0.25s var(--ease-spring);
+  animation: pulsoCarrito 3.5s ease-out 2s infinite;
+}
+
+.btn-carrito:hover {
+  transform: scale(1.08);
+}
+
+.btn-carrito.bump {
+  animation: bumpCarrito 0.5s var(--ease-spring);
+}
+
+/* Total que "destella" cuando cambia (la clase .flash la pone animaciones.js) */
+@keyframes destelloTotal {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.35); color: var(--verde); text-shadow: 0 0 12px rgba(0, 255, 136, 0.8); }
+  100% { transform: scale(1); }
+}
+
+#totalCarrito,
+#totalBoleta {
+  display: inline-block;
+}
+
+#totalCarrito.flash,
+#totalBoleta.flash {
+  animation: destelloTotal 0.5s ease;
+}
+
+.modal {
+  animation: fundirModal 0.25s ease both;
+}
+
+.modal-content {
+  animation: entrarModal 0.4s var(--ease-spring) both;
+}
+
+@supports ((-webkit-backdrop-filter: blur(4px)) or (backdrop-filter: blur(4px))) {
+  .modal {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+}
+
+.close {
+  display: inline-block;
+  transition: transform 0.3s var(--ease-out), color 0.3s ease;
+}
+
+.close:hover {
+  transform: rotate(90deg);
+  color: var(--verde);
+}
+
+.carrito-item {
+  animation: entrarItem 0.3s var(--ease-out) both;
+}
+
+.detalle-boleta .item-boleta {
+  animation: entrarItem 0.35s var(--ease-out) both;
+}
+
+.detalle-boleta .item-boleta:nth-child(2) { animation-delay: 0.06s; }
+.detalle-boleta .item-boleta:nth-child(3) { animation-delay: 0.12s; }
+.detalle-boleta .item-boleta:nth-child(4) { animation-delay: 0.18s; }
+.detalle-boleta .item-boleta:nth-child(n + 5) { animation-delay: 0.24s; }
+
+.btn-eliminar {
+  transition: transform 0.2s var(--ease-spring), background 0.2s ease;
+}
+
+.btn-eliminar:hover {
+  transform: scale(1.12);
+  background: #ff2e2e;
+}
+
+.btn-eliminar:active {
+  transform: scale(0.9);
+}
+
+/* Mensajes de compra: éxito con "pop", error con sacudida */
+@keyframes popExito {
+  0%   { transform: scale(0.9); opacity: 0.4; }
+  60%  { transform: scale(1.04); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes sacudir {
+  10%, 90% { transform: translateX(-2px); }
+  20%, 80% { transform: translateX(4px); }
+  30%, 50%, 70% { transform: translateX(-6px); }
+  40%, 60% { transform: translateX(6px); }
+}
+
+.estado-compra {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.estado-compra.success {
+  background: rgba(0, 255, 136, 0.12);
+  animation: popExito 0.5s var(--ease-spring);
+}
+
+.estado-compra.error {
+  background: rgba(255, 92, 92, 0.12);
+  animation: sacudir 0.45s ease;
+}
+
+.pagar {
+  transition: transform 0.2s var(--ease-out), box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.pagar:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 255, 136, 0.35);
+}
+
+.pagar:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+.beneficio {
+  transition: transform 0.35s var(--ease-out), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.beneficio:hover {
+  transform: translateY(-6px);
+  border-color: var(--verde);
+  box-shadow: 0 12px 28px rgba(0, 255, 136, 0.15);
+}
+
+.beneficio h3 {
+  display: inline-block;
+  transition: transform 0.4s var(--ease-spring);
+}
+
+.beneficio:hover h3 {
+  transform: scale(1.08);
+}
+
+.destacados h2,
+.home-section h2 {
+  display: inline-block;
+}
+
+.destacados h2::after,
+.home-section h2::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 60%;
+  margin-top: 8px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--verde), transparent);
+  transition: width 0.8s var(--ease-out) 0.2s;
+}
+
+
+.js-reveal .reveal:not(.visible) {
+  animation: none;
+  opacity: 0;
+}
+
+.js-reveal .reveal.visible {
+  animation: aparecerCard 0.6s var(--ease-out) backwards;
+  animation-delay: var(--d, 0s);
+}
+
+.js-reveal h2.reveal:not(.visible)::after {
+  width: 0;
+}
+
+
+@supports (animation-timeline: scroll()) {
+  @keyframes progresoScroll {
+    to { transform: scaleX(1); }
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    z-index: 3000;
+    background: linear-gradient(90deg, #00ff88, #00ffff);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    animation: progresoScroll linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+  }
+}

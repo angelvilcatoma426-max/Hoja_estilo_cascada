@@ -195,6 +195,7 @@
         function agregarAlCarrito(nombre, precio) {
             if (!haySesionActiva()) {
                 mostrarEstado('Debes iniciar sesión para agregar juegos al carrito.', 'error');
+                modal.style.display = 'block';
                 return;
             }
 
