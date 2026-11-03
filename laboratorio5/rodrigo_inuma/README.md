@@ -1,10 +1,5 @@
 # Semana 5 · CSS Build Lab
 
-## Autor
-- Apellidos y nombres: Vilcatoma Napan Angel Jhoel
-- Código: U23218298
-- Sección: 31553
-
 ## Entorno reproducible
 - Sistema operativo: Windows 11 Home / Insider Preview
 - node --version: v24.20.0
@@ -39,4 +34,3 @@
 
 ## Declaración
 - Fuentes y recursos consultados: Guía de laboratorio Semana 5 UTP, documentación oficial de Dart Sass y Less.js.
-- Cambios propios realizados: Creación del árbol de carpetas, configuración exacta de scripts en `package.json`, redacción de las fuentes SCSS/LESS y comprobación de trazabilidad mediante DevTools.

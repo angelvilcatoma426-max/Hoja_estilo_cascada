@@ -1,10 +1,5 @@
 # PC1 UTP TechHub
 
-## Autor
-- **Apellidos y nombres:** Vilcatoma Napan Angel Jhoel
-- **Código:** U23218298
-- **Sección:** 31553
-
 ## Decisiones de diseño
 1. **Base mobile-first:** Se partió de un flujo vertical estándar en 1 sola columna a 320px de ancho, garantizando que todo el contenido fuera visible y operable sin desbordamientos horizontales antes de añadir cualquier media query.
 2. **Uso de Flexbox:** Aplicado para elementos unidimensionales como la cabecera, barra de navegación, grupos de botones, etiquetas de tarjetas, detalles de la agenda y el footer. Se hizo uso extensivo de `flex-wrap: wrap` y `gap` para garantizar un reflujo seguro al cambiar de pantalla.
@@ -33,4 +28,4 @@
 ## Autoevaluación
 - **Criterio mejor logrado:** Integración de Grid intrínseco con Flexbox interno en la tarjetas de talleres, permitiendo que el enlace inferior siempre se mantenga alineado al pie usando `margin-block-start: auto`.
 - **Mejora pendiente:** Ampliar la interactividad del buscador/filtros en futuras entregas al integrar JavaScript.
-- **Declaración de autoría y recursos consultados:** Trabajo de autoría propia basado en la guía de laboratorio de la Semana 4 de Hojas de Estilo en Cascada Avanzado (UTP) y documentación oficial de MDN Web Docs.
+- **Recursos consultados:** Guía de laboratorio de la Semana 4 de Hojas de Estilo en Cascada Avanzado (UTP) y documentación oficial de MDN Web Docs.

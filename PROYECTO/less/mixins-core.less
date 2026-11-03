@@ -12,7 +12,7 @@
 }
 
 .grid-tarjetas(@min: var(--card-min-width), @gap: @gap-cards) {
-    // T11: base con flexbox (todos los navegadores)
+    // f|exbox
     display: flex;
     flex-wrap: wrap;
     gap: @gap;
@@ -21,7 +21,7 @@
         flex: 1 1 @min;
     }
 
-    // Mejora progresiva: Grid solo si existe
+    // Mejora progresiva
     @supports (display: grid) {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(@min, 1fr));

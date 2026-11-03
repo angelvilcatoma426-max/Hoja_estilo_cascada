@@ -1,10 +1,5 @@
 # Semana 8 · CSS Build Lab (PC2 Integración SASS y LESS)
 
-## Autor
-- **Apellidos y nombres:** Vilcatoma Napan Angel Jhoel
-- **Código:** U23218298
-- **Sección:** 31553
-
 ## Entorno reproducible
 - **Sistema operativo:** Windows 11
 - **Node.js:** v24.20.0
